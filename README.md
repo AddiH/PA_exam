@@ -1,2 +1,2 @@
 # PA_exam
-Simple joint simon task experiment
+Simple Joint Simon Task experiment for "Perception and Action" exam at Aarhus University
