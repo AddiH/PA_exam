@@ -6,16 +6,15 @@ import pandas as pd
 
 # define window
 win_box = visual.Window(color = "white", size=(1440, 847), pos=(0,0))
-win_box.flip()
 
-### collecting basic data ###
+### Collecting basic data ###
 ## Get nicknames ##
 # define dialogue boxes
 dialog_1 = gui.Dlg(title = "Participant nicknames")
 dialog_1.addText('Welcome to the experiment! First we need some data from you.\nFill out a nickname or initials for each participant below:')
 dialog_1.addField("Participant 1: ")
 dialog_1.addField("Participant 2: ")
-dialog_1.addText('How long have you known each other?')
+dialog_1.addText('How long have you known each other? (Please specify years or months)')
 dialog_1.addField("Relationship length: ")
 
 # show dialog
@@ -53,22 +52,16 @@ if dialog_3.OK:
 elif dialog_3.Cancel:
     core.quit()
 
-win_box.close
-
 ## IOS for P1 ##
-P1_IOS = 0
 
-# define window
-win_full = visual.Window(color = "white", fullscr = True)
 # load stimuli
-IOS_text = visual.ImageStim(win_full, image = "stimuli/IOS_text.png")
+IOS_text = visual.ImageStim(win_box, image = "stimuli/IOS_text.png")
 # draw img to the canvas
 IOS_text.draw()
 # flip the screen 
-win_full.flip()
+win_box.flip()
 # wait for the participant to choose
 key = event.waitKeys(keyList = ["1", "2", "3", "4", "5", "6", "7", "escape"])
-
 if key[0] == "escape":
     core.quit()
 elif (key[0] == "1"):
@@ -86,8 +79,7 @@ elif (key[0] == "6"):
 elif (key[0] == "7"):
     P1_IOS = 7
 
-# define window
-win_full.close
+# reset to white screen
 win_box.flip()
 
 ## Get info from P2 ##
@@ -116,16 +108,13 @@ elif dialog_5.Cancel:
     core.quit()
 
 ## IOS for P2 ##
-P2_IOS = 0
 
-# define window
-win = visual.Window(color = "white", fullscr = True)
 # load stimuli
-IOS_text = visual.ImageStim(win, image = "stimuli/IOS_text.png")
+IOS_text = visual.ImageStim(win_box, image = "stimuli/IOS_text.png")
 # draw img to the canvas
 IOS_text.draw()
 # flip the screen 
-win.flip()
+win_box.flip()
 # wait for the participant to choose
 key = event.waitKeys(keyList = ["1", "2", "3", "4", "5", "6", "7", "escape"])
 # Quit if escape is pressed
@@ -147,26 +136,6 @@ elif (key[0] == "6"):
 elif (key[0] == "7"):
     P2_IOS = 7
 
-# define window
-win = visual.Window(color = "white", size=(1440, 847), pos=(0,0))
-win.flip()
-
-### Welcome text ###
-# define window
-win = visual.Window(color = "white", fullscr = True)
-# prepare welcome text 
-text = visual.TextStim(win, text = "{}, please switch with {}. It is {}'s turn to fill out info. Press any key to continue.".format(P1_nn, P2_nn))
-# draw it to the canvas
-text.draw()
-# flip the screen 
-win.flip()
-# wait for the participant to press any key
-event.waitKeys()
-
-
-
-
-
 ### Welcome text ###
 # define window
 win = visual.Window(color = "black", fullscr = True)
@@ -179,9 +148,6 @@ win.flip()
 # wait for the participant to press any key
 event.waitKeys()
 
-### Instruction text ###
-
-### IOS for both participants ###
 
 ### Instruction text ###
 
@@ -234,7 +200,7 @@ logfile = logfile.append({
     "P2_IOS": P2_IOS},  ignore_index = True)
 
 
-### Goodbye text ###
-
 ### Saving logfile ###
 logfile.to_csv(logfilename)
+
+### Goodbye text ###
