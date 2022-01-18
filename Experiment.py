@@ -143,12 +143,14 @@ elif (key[0] == "7"):
 win = visual.Window(color = "black", fullscr = True)
 
 # prepare welcome text 
-text = visual.TextStim(win, text = "Welcome to practise trials!\nPress any key to start...")
+text = visual.TextStim(win, text = "Welcome to the experiment! \n {} please sit to the right of the computer, and place your right index finger on the P button. \n {} please sit on the left and place your left index finger on the W button. \n Press spacebar to continue.".format(P1_nn, P2_nn))
 text.draw()
 win.flip()
-# wait for the participant to press any key
-event.waitKeys()
-
+event.waitKeys(keyList = ["space"])
+text = visual.TextStim(win, text = "A circle will be shown on the screen.\n {} will press P when the circle is blue. \n {} will press W when the circle is yellow. \n Please answer as fast as possible, while still answering correctly.\n Press spacebar to start the practise trials.".format(P1_nn, P2_nn))
+text.draw()
+win.flip()
+event.waitKeys(keyList = ["space"])
 
 ### Instruction text ###
 
@@ -235,22 +237,22 @@ ID = random.randint(10000, 99999)
 
 ### Experiment ### 
 ## Welcome text ##
-text = visual.TextStim(win, text = "REAL EXPERIMENT BEGINS\nPress any key to start...")
+text = visual.TextStim(win, text = "Good job! Press spacebar to continue to the experiment.")
 text.draw()
 win.flip()
-event.waitKeys()
+event.waitKeys(keyList = ["space"])
 
-## actual block of trials
-#real_trials = [BR, BL, YR, YL] * 14
-#filler_trials = [BM, YM] * 7
-#order = real_trials + filler_trials
-#random.shuffle(order)
-
-# short version for testing
-real_trials = [BR, BL, YR, YL]
-filler_trials = [BM, YM]
+# actual block of trials
+real_trials = [BR, BL, YR, YL] * 14
+filler_trials = [BM, YM] * 7
 order = real_trials + filler_trials
 random.shuffle(order)
+
+## short version for testing
+#real_trials = [BR, BL, YR, YL]
+#filler_trials = [BM, YM]
+#order = real_trials + filler_trials
+#random.shuffle(order)
 
 # define stopwatch
 stopwatch = core.Clock()
@@ -259,8 +261,7 @@ stopwatch = core.Clock()
 for stim in order:
     f_cross.draw()
     win.flip()
-    core.wait(1)
-    #random.randint(1.25, 1.75)
+    core.wait(1.5)
     stim.draw() 
     win.flip()
     # reset stopwatch and start recording
@@ -269,6 +270,9 @@ for stim in order:
     key = event.waitKeys(keyList = ["w", "p", "escape"], maxWait=(1.5))
     # get the reaction time
     rt = stopwatch.getTime()
+    # black screen for 1 second
+    win.flip()
+    core.wait(1)
 
     # if participant did not press anything within 1.5 seconds, recod "none" key press
     if key == None:
@@ -301,13 +305,13 @@ for stim in order:
         "timestamp": date,
         "ID": ID,
         "r_len" : r_len,
-        "P1_nn" : P1_nn,
+        "P1_nn" : "P1",
         "P1_age" : P1_age,
         "P1_gender" : P1_gender,
         "P1_nationality" : P1_nationality,
         "P1_r_type" : P1_r_type,
         "P1_IOS": P1_IOS,
-        "P2_nn": P2_nn,
+        "P2_nn": "P2",
         "P2_age" : P2_age,
         "P2_gender" : P2_gender,
         "P2_nationality" : P2_nationality,
@@ -324,7 +328,7 @@ logfilename = "logfiles/{}_{}.csv".format(date, ID)
 logfile.to_csv(logfilename)
 
 ### Goodbye text ###
-text = visual.TextStim(win, text = "bye bitches")
+text = visual.TextStim(win, text = "Thank you for your participation!")
 text.draw()
 win.flip()
 core.wait(6)
