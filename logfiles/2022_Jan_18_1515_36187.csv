@@ -1,0 +1,7 @@
+,timestamp,ID,r_len,P1_nn,P1_age,P1_gender,P1_nationality,P1_r_type,P1_IOS,P2_nn,P2_age,P2_gender,P2_nationality,P2_r_type,P2_IOS,key_press,rt,trial_stim
+0,2022_Jan_18_1515,36187,43,wef,34r,Other,23r,Friends,3,wfe,34,Male,ssevw,Family,3,w,1.1593034580000676,YM
+1,2022_Jan_18_1515,36187,43,wef,34r,Other,23r,Friends,3,wfe,34,Male,ssevw,Family,3,p,0.02521920800791122,YL
+2,2022_Jan_18_1515,36187,43,wef,34r,Other,23r,Friends,3,wfe,34,Male,ssevw,Family,3,w,0.2628602500044508,YR
+3,2022_Jan_18_1515,36187,43,wef,34r,Other,23r,Friends,3,wfe,34,Male,ssevw,Family,3,p,0.46074529200268444,BM
+4,2022_Jan_18_1515,36187,43,wef,34r,Other,23r,Friends,3,wfe,34,Male,ssevw,Family,3,w,0.3742342499899678,BR
+5,2022_Jan_18_1515,36187,43,wef,34r,Other,23r,Friends,3,wfe,34,Male,ssevw,Family,3,p,0.029563665986643173,BL

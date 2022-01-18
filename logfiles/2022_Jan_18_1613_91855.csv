@@ -1,0 +1,7 @@
+,timestamp,ID,r_len,P1_nn,P1_age,P1_gender,P1_nationality,P1_r_type,P1_IOS,P2_nn,P2_age,P2_gender,P2_nationality,P2_r_type,P2_IOS,key_press,rt,trial_stim
+0,2022_Jan_18_1613,91855,3,Malte,34,Male,3fewefwfefwefwe,Friends,5,Astrid,,-,,-,2,w,0.46632958299596794,YR
+1,2022_Jan_18_1613,91855,3,Malte,34,Male,3fewefwfefwefwe,Friends,5,Astrid,,-,,-,2,w,0.4092389580036979,YM
+2,2022_Jan_18_1613,91855,3,Malte,34,Male,3fewefwfefwefwe,Friends,5,Astrid,,-,,-,2,p,0.5528172920021461,BL
+3,2022_Jan_18_1613,91855,3,Malte,34,Male,3fewefwfefwefwe,Friends,5,Astrid,,-,,-,2,none,1.5004076250043,BM
+4,2022_Jan_18_1613,91855,3,Malte,34,Male,3fewefwfefwefwe,Friends,5,Astrid,,-,,-,2,p,0.5061217909969855,BR
+5,2022_Jan_18_1613,91855,3,Malte,34,Male,3fewefwfefwefwe,Friends,5,Astrid,,-,,-,2,w,0.36771070800023153,YL

@@ -1,8 +1,16 @@
+#################
+# Participant 1 is RIGHT/BLUE/"P" KEY
+# Participant 2 is LEFT/YELLOW/"W" KEY
+#################
+
+
 ### Import ###
 from psychopy import visual, core, event, gui, data
 import glob
 import random
 import pandas as pd
+
+
 
 # define window
 win_box = visual.Window(color = "white", size=(1440, 847), pos=(0,0))
@@ -140,7 +148,7 @@ elif (key[0] == "7"):
 # define window
 win = visual.Window(color = "black", fullscr = True)
 # prepare welcome text 
-text = visual.TextStim(win, text = "Welcome to the experiment!\nPress any key to start...")
+text = visual.TextStim(win, text = "Welcome to practise trials!\nPress any key to start...")
 # draw it to the canvas
 text.draw()
 # flip the screen 
@@ -152,8 +160,54 @@ event.waitKeys()
 ### Instruction text ###
 
 ### Practise trials ###
+# Load in all img
+BR = visual.ImageStim(win, image = "stimuli/BR.png")
+BL = visual.ImageStim(win, image = "stimuli/BL.png")
+YR = visual.ImageStim(win, image = "stimuli/YR.png")
+YL = visual.ImageStim(win, image = "stimuli/YL.png")
+BM = visual.ImageStim(win, image = "stimuli/BM.png")
+YM= visual.ImageStim(win, image = "stimuli/YM.png")
+f_cross = visual.ImageStim(win, image = "stimuli/fix_cross.png")
 
-### Experiment ###
+prac_order = [BR, BL, YR, YL, BM, YM] * 2
+random.shuffle(prac_order)
+
+for stim in prac_order:
+    f_cross.draw()
+    win.flip()
+    core.wait(1)
+    # draw it to the canvas
+    stim.draw()
+    # flip the screen 
+    win.flip()
+    # wait for the participant to press W or P
+    # we will also make the option to press esc in order to terminate the experiment
+    key = event.waitKeys(keyList = ["w", "p", "escape"], maxWait=(1.5))
+
+# if escape if pressed - end the experiment
+    if key == None:
+        text = visual.TextStim(win, text = "Too slow")
+        text.draw()
+        win.flip()
+        core.wait(3)
+    elif key[0] == "escape":
+        core.quit()
+    elif (key [0] == "w" and (stim == YR or stim == YL or stim == YM)):
+        text = visual.TextStim(win, text = "Correct")
+        text.draw()
+        win.flip()
+        core.wait(2)
+    elif (key [0] == "p" and (stim == BR or stim == BL or stim == BM)):
+        text = visual.TextStim(win, text = "Correct", color = "green")
+        text.draw()
+        win.flip()
+        core.wait(2)
+    else:  
+        text = visual.TextStim(win, text = "Error", color = "red")
+        text.draw()
+        win.flip()
+        core.wait(2)
+
 
 ### Logfile ###
 
@@ -176,31 +230,111 @@ columns = ["timestamp",
     "P2_gender",
     "P2_nationality",
     "P2_r_type",
-    "P2_IOS", ]
+    "P2_IOS", 
+    "key_press",
+    "rt",
+    "trial_stim"]
 # logfile dataframe
 logfile = pd.DataFrame(columns = columns)
 # logfilename
 logfilename = "logfiles/{}_{}.csv".format(date, ID)
 
-logfile = logfile.append({
-    "timestamp": date,
-    "ID": ID,
-    "r_len" : r_len,
-    "P1_nn" : P1_nn,
-    "P1_age" : P1_age,
-    "P1_gender" : P1_gender,
-    "P1_nationality" : P1_nationality,
-    "P1_r_type" : P1_r_type,
-    "P1_IOS": P1_IOS,
-    "P2_nn": P2_nn,
-    "P2_age" : P2_age,
-    "P2_gender" : P2_gender,
-    "P2_nationality" : P2_nationality,
-    "P2_r_type" : P2_r_type,
-    "P2_IOS": P2_IOS},  ignore_index = True)
+### Experiment ###
+
+### Welcome text ###
+
+## prepare welcome text 
+text = visual.TextStim(win, text = "REAL EXPERIMENT BEGINS\nPress any key to start...")
+# draw it to the canvas
+text.draw()
+# flip the screen 
+win.flip()
+# wait for the participant to press any key
+event.waitKeys()
+
+#real_trials = [BR, BL, YR, YL] * 14
+#filler_trials = [BM, YM] * 7
+#order = real_trials + filler_trials
+#random.shuffle(order)
+
+real_trials = [BR, BL, YR, YL]
+filler_trials = [BM, YM]
+order = real_trials + filler_trials
+random.shuffle(order)
+
+## define stopwatch
+stopwatch = core.Clock()
+
+for stim in order:
+    f_cross.draw()
+    win.flip()
+    core.wait(1)
+    # draw it to the canvas
+    stim.draw()
+    # flip the screen 
+    win.flip()
+    #Reset stopwatch and start recording
+    stopwatch.reset()
+    # wait for the participant to press W or P
+    # we will also make the option to press esc in order to terminate the experiment
+    key = event.waitKeys(keyList = ["w", "p", "escape"], maxWait=(1.5))
+    #Get the reaction time
+    rt = stopwatch.getTime()
+
+# if escape if pressed - end the experiment
+    if key == None:
+        key_press = "none"
+    elif key[0] == "escape":
+        core.quit()
+    elif key [0] == "w":
+        key_press = "w"
+    elif key [0] == "p":
+        key_press = "p"
+        
+    if stim == BR:
+        trial_stim = "BR"
+    if stim == BL:
+        trial_stim = "BL"
+    if stim == YR:
+        trial_stim = "YR"
+    if stim == YL:
+        trial_stim = "YL"
+    if stim == BM:
+        trial_stim = "BM"
+    if stim == YM:
+        trial_stim = "YM"
+
+    logfile = logfile.append({
+        "timestamp": date,
+        "ID": ID,
+        "r_len" : r_len,
+        "P1_nn" : P1_nn,
+        "P1_age" : P1_age,
+        "P1_gender" : P1_gender,
+        "P1_nationality" : P1_nationality,
+        "P1_r_type" : P1_r_type,
+        "P1_IOS": P1_IOS,
+        "P2_nn": P2_nn,
+        "P2_age" : P2_age,
+        "P2_gender" : P2_gender,
+        "P2_nationality" : P2_nationality,
+        "P2_r_type" : P2_r_type,
+        "P2_IOS": P2_IOS,
+        "key_press" : key_press,
+        "rt" : rt,
+        "trial_stim" : trial_stim},  ignore_index = True)
 
 
 ### Saving logfile ###
 logfile.to_csv(logfilename)
 
 ### Goodbye text ###
+# define window
+win = visual.Window(color = "black", fullscr = True)
+# prepare welcome text 
+text = visual.TextStim(win, text = "bye bitches")
+# draw it to the canvas
+text.draw()
+# flip the screen 
+win.flip()
+core.wait(6)
