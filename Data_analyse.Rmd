@@ -7,7 +7,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-pacman::p_load(tidyverse, readbulk, wesanderson)
+pacman::p_load(tidyverse, readbulk, wesanderson, lmerTest)
 ```
 
 ```{r}
@@ -92,4 +92,18 @@ with_errors %>%
 m1 <- lmerTest::lmer(rt ~ congruency + (1|subject), d)
 summary(m1)
 ```
+
+### Model rt ~ congruency + IOS + subject
+```{r}
+m1 <- lmerTest::lmer(rt ~ congruency + (1|IOS) + (1|subject), d)
+summary(m1)
+```
+
+```{r}
+# Compute the analysis of variance
+res.aov <- aov(weight ~ group, data = my_data)
+# Summary of the analysis
+summary(res.aov)
+```
+
 

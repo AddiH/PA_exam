@@ -1,0 +1,7 @@
+,timestamp,experiment_ID,subject,r_len,handedness,vision,colorvision,age,gender,nationality,r_type,IOS,key_press,rt,trial_stim
+0,2022_Jan_21_1239,39538,72488,34,Right,Yes,No,34,Female,sfefs,Friends,3,p,0.8252245410112664,YR
+1,2022_Jan_21_1239,39538,none,34,none,none,none,none,none,none,none,none,none,1.5003055830020458,YM
+2,2022_Jan_21_1239,39538,36044,34,Right,No,Yes,svdzvadsz,Female,svdzvadsz,Friends,2,w,0.5396782080060802,BR
+3,2022_Jan_21_1239,39538,72488,34,Right,Yes,No,34,Female,sfefs,Friends,3,p,0.6584033749822993,YL
+4,2022_Jan_21_1239,39538,36044,34,Right,No,Yes,svdzvadsz,Female,svdzvadsz,Friends,2,w,0.3321753339841962,BL
+5,2022_Jan_21_1239,39538,72488,34,Right,Yes,No,34,Female,sfefs,Friends,3,p,0.6147197080135811,BM

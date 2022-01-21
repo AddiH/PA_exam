@@ -42,21 +42,25 @@ dialog_2.show()
 dialog_3 = gui.Dlg(title = "{} information".format(P1_nn))
 dialog_3.addText('{}, please fill out the following information on yourself without {} being able to see the screen.'.format(P1_nn, P2_nn))
 dialog_3.addText('Please confirm that you have normal or corrected to normal vision, that you are right handed and not coloblind.')
-dialog_3.addField("I agree with the above statement", choices = ["Yes", "No"])
+dialog_3.addField("Are you left or right handed?", choices = ["-", "Right", "Left", "Ambidextrous"])
+dialog_3.addField("Is your vision normal or corrected to normal?", choices = ["-", "Yes", "No"])
+dialog_3.addField("Are you colorblind?", choices = ["-", "No", "Yes", "Yes, but I can clearly tell the difference between blue and yellow"])
 dialog_3.addField("Age:")
 dialog_3.addField("Gender:", choices = ["-","Female", "Male", "Other"])
 dialog_3.addField("Nationality:")
-dialog_3.addText('How would you describe your relationship with {}'.format(P2_nn))
+dialog_3.addText('How would you describe your relationship with {}?'.format(P2_nn))
 dialog_3.addField("Relationship type:", choices = ["-","Friends", "Family", "Romantic"])
 dialog_3.addText('{} continue to the next task. Do NOT call {} back yet'.format(P1_nn, P2_nn))
 
 dialog_3.show()
 if dialog_3.OK:
-    P1_age = dialog_3.data[1]
-    P1_gender = dialog_3.data[2]
-    P1_nationality = dialog_3.data[3]
-    P1_r_type = dialog_3.data[4]
-    P1_isanormalperson = dialog_3.data[0]
+    P1_handedness = dialog_3.data[0]
+    P1_vision = dialog_3.data[1]
+    P1_colorvision= dialog_3.data[2]
+    P1_age = dialog_3.data[3]
+    P1_gender = dialog_3.data[4]
+    P1_nationality = dialog_3.data[5]
+    P1_r_type = dialog_3.data[6]
 elif dialog_3.Cancel:
     core.quit()
 
@@ -97,26 +101,29 @@ dialog_4 = gui.Dlg(title = "{} please leave".format(P1_nn))
 dialog_4.addText('{}, please get up and leave. {} has to fill out info without {} looking at the screen. {} will call {} back when instructed to do so.'.format(P1_nn, P2_nn, P1_nn, P2_nn, P1_nn))
 dialog_4.show()
 
-# dialog collecting data from P1
-dialog_5 = gui.Dlg(title = "{} information".format(P2_nn))
-dialog_5.addText('{}, please fill out the following information on yourself without {} being able to see the screen.'.format(P2_nn, P1_nn))
+# dialog collecting data from P2
+dialog_5 = gui.Dlg(title = "{} information".format(P1_nn))
+dialog_5.addText('{}, please fill out the following information on yourself without {} being able to see the screen.'.format(P1_nn, P2_nn))
 dialog_5.addText('Please confirm that you have normal or corrected to normal vision, that you are right handed and not coloblind.')
-dialog_5.addField("I agree with the above statement", choices = ["Yes", "No"])
+dialog_5.addField("Are you left or right handed?", choices = ["-", "Right", "Left", "Ambidextrous"])
+dialog_5.addField("Is your vision normal or corrected to normal?", choices = ["-", "Yes", "No"])
+dialog_5.addField("Are you colorblind?", choices = ["-", "No", "Yes", "Yes, but I can clearly tell the difference between blue and yellow"])
 dialog_5.addField("Age:")
 dialog_5.addField("Gender:", choices = ["-","Female", "Male", "Other"])
 dialog_5.addField("Nationality:")
-dialog_5.addText('How would you describe your relationship with {}'.format(P1_nn))
+dialog_5.addText('How would you describe your relationship with {}?'.format(P2_nn))
 dialog_5.addField("Relationship type:", choices = ["-","Friends", "Family", "Romantic"])
-dialog_5.addText('{} continue to the next task. Do NOT call {} back yet'.format(P2_nn, P1_nn))
+dialog_5.addText('{} continue to the next task. Do NOT call {} back yet'.format(P1_nn, P2_nn))
 
 dialog_5.show()
-
 if dialog_5.OK:
-    P2_age = dialog_5.data[1]
-    P2_gender = dialog_5.data[2]
-    P2_nationality = dialog_5.data[3]
-    P2_r_type = dialog_5.data[4]
-    P2_isanormalperson = dialog_3.data[0]
+    P2_handedness = dialog_5.data[0]
+    P2_vision = dialog_5.data[1]
+    P2_colorvision= dialog_5.data[2]
+    P2_age = dialog_5.data[5]
+    P2_gender = dialog_5.data[4]
+    P2_nationality = dialog_5.data[5]
+    P2_r_type = dialog_5.data[6]
 elif dialog_5.Cancel:
     core.quit()
 
@@ -169,68 +176,65 @@ YL = visual.ImageStim(win, image = "stimuli/YL.png")
 BM = visual.ImageStim(win, image = "stimuli/BM.png")
 YM= visual.ImageStim(win, image = "stimuli/YM.png")
 f_cross = visual.ImageStim(win, image = "stimuli/fix_cross.png")
-
-# Include 2 of each stimuli in pactise trials
-prac_order = [BR, BL, YR, YL, BM, YM] * 2
-# randomise order
-random.shuffle(prac_order)
-
-for stim in prac_order:
-    f_cross.draw()
-    win.flip()
-    core.wait(1)
-    stim.draw()
-    win.flip()
-    # wait for the participant to press W or P or esc
-    key = event.waitKeys(keyList = ["w", "p", "escape"], maxWait=(1.5))
-
-# if escape if pressed - end the experiment
-    # if no key is pressed, show "too slow"
-    if key == None:
-        text = visual.TextStim(win, text = "Too slow")
-        text.draw()
-        win.flip()
-        core.wait(2)
-    # if esc is pressed quit the experiment
-    elif key[0] == "escape":
-        core.quit()
-    # if w is pressed when a  yellow circle is shown, show "correct"
-    elif (key [0] == "w" and (stim == YR or stim == YL or stim == YM)):
-        text = visual.TextStim(win, text = "Correct", color = "green")
-        text.draw()
-        win.flip()
-        core.wait(2)
-    # if p is pressed when a  blue circle is shown, show "correct"
-    elif (key [0] == "p" and (stim == BR or stim == BL or stim == BM)):
-        text = visual.TextStim(win, text = "Correct", color = "green")
-        text.draw()
-        win.flip()
-        core.wait(2)
-    # if the wrong key is pressed, show "error"
-    else:  
-        text = visual.TextStim(win, text = "Error", color = "red")
-        text.draw()
-        win.flip()
-        core.wait(2)
+#
+## Include 2 of each stimuli in pactise trials
+#prac_order = [BR, BL, YR, YL, BM, YM] * 2
+## randomise order
+#random.shuffle(prac_order)
+#
+#for stim in prac_order:
+#    f_cross.draw()
+#    win.flip()
+#    core.wait(1)
+#    stim.draw()
+#    win.flip()
+#    # wait for the participant to press W or P or esc
+#    key = event.waitKeys(keyList = ["w", "p", "escape"], maxWait=(1.5))
+#
+## if escape if pressed - end the experiment
+#    # if no key is pressed, show "too slow"
+#    if key == None:
+#        text = visual.TextStim(win, text = "Too slow")
+#        text.draw()
+#        win.flip()
+#        core.wait(2)
+#    # if esc is pressed quit the experiment
+#    elif key[0] == "escape":
+#        core.quit()
+#    # if w is pressed when a  yellow circle is shown, show "correct"
+#    elif (key [0] == "w" and (stim == YR or stim == YL or stim == YM)):
+#        text = visual.TextStim(win, text = "Correct", color = "green")
+#        text.draw()
+#        win.flip()
+#        core.wait(2)
+#    # if p is pressed when a  blue circle is shown, show "correct"
+#    elif (key [0] == "p" and (stim == BR or stim == BL or stim == BM)):
+#        text = visual.TextStim(win, text = "Correct", color = "green")
+#        text.draw()
+#        win.flip()
+#        core.wait(2)
+#    # if the wrong key is pressed, show "error"
+#    else:  
+#        text = visual.TextStim(win, text = "Error", color = "red")
+#        text.draw()
+#        win.flip()
+#        core.wait(2)
 
 
 ### Logfile ###
 # name columns
 columns = ["timestamp", 
-    "ID", 
+    "experiment_ID", 
+    "subject",
     "r_len",
-    "P1_isanormalperson",
-    "P1_age",
-    "P1_gender",
-    "P1_nationality",
-    "P1_r_type",
-    "P1_IOS", 
-    "P2_isanormalperson",
-    "P2_age",
-    "P2_gender",
-    "P2_nationality",
-    "P2_r_type",
-    "P2_IOS", 
+    "handedness",
+    "vision",
+    "colorvision",
+    "age",
+    "gender",
+    "nationality",
+    "r_type",
+    "IOS", 
     "key_press",
     "rt",
     "trial_stim"]
@@ -239,7 +243,10 @@ logfile = pd.DataFrame(columns = columns)
 # get the date and time to meake unique logfilename
 date = data.getDateStr()
 # random ID for each experiment
-ID = random.randint(10000, 99999)
+exp_ID = random.randint(10000, 99999)
+# random ID for each participant
+P1_ID = random.randint(10000, 99999)
+P2_ID = random.randint(10000, 99999)
 
 ### Experiment ### 
 ## Welcome text ##
@@ -248,17 +255,17 @@ text.draw()
 win.flip()
 event.waitKeys(keyList = ["space"])
 
-# actual block of trials
-real_trials = [BR, BL, YR, YL] * 14
-filler_trials = [BM, YM] * 7
-order = real_trials + filler_trials
-random.shuffle(order)
-
-## short version for testing
-#real_trials = [BR, BL, YR, YL]
-#filler_trials = [BM, YM]
+## actual block of trials
+#real_trials = [BR, BL, YR, YL] * 14
+#filler_trials = [BM, YM] * 7
 #order = real_trials + filler_trials
 #random.shuffle(order)
+
+# short version for testing
+real_trials = [BR, BL, YR, YL]
+filler_trials = [BM, YM]
+order = real_trials + filler_trials
+random.shuffle(order)
 
 # define stopwatch
 stopwatch = core.Clock()
@@ -279,20 +286,8 @@ for stim in order:
     # black screen for 1 second
     win.flip()
     core.wait(1)
-
-    # if participant did not press anything within 1.5 seconds, recod "none" key press
-    if key == None:
-        key_press = "none"
-    # if escape if pressed - end the experiment
-    elif key[0] == "escape":
-        core.quit()
-    # record w an p keypress
-    elif key [0] == "w":
-        key_press = "w"
-    elif key [0] == "p":
-        key_press = "p"
     
-    # record trial type
+        # record trial type
     if stim == BR:
         trial_stim = "BR"
     if stim == BL:
@@ -306,31 +301,66 @@ for stim in order:
     if stim == YM:
         trial_stim = "YM"
 
-# append each trial to logfile
-    logfile = logfile.append({
-        "timestamp": date,
-        "ID": ID,
-        "r_len" : r_len,
-        "P1_isanormalperson": P1_isanormalperson,
-        "P1_age" : P1_age,
-        "P1_gender" : P1_gender,
-        "P1_nationality" : P1_nationality,
-        "P1_r_type" : P1_r_type,
-        "P1_IOS": P1_IOS,
-        "P2_isanormalperson": P2_isanormalperson,
-        "P2_age" : P2_age,
-        "P2_gender" : P2_gender,
-        "P2_nationality" : P2_nationality,
-        "P2_r_type" : P2_r_type,
-        "P2_IOS": P2_IOS,
-        "key_press" : key_press,
-        "rt" : rt,
-        "trial_stim" : trial_stim},  ignore_index = True)
-
+    # if participant did not press anything within 1.5 seconds, recod "none" key press
+    if key == None:
+        logfile = logfile.append({
+            "timestamp" : date, 
+            "experiment_ID" : exp_ID, 
+            "subject" : "none",
+            "r_len" : r_len,
+            "handedness" : "none",
+            "vision" : "none",
+            "colorvision" : "none",
+            "age" : "none",
+            "gender" : "none",
+            "nationality" : "none",
+            "r_type" : "none",
+            "IOS" : "none", 
+            "key_press" : "none",
+            "rt" : rt,
+            "trial_stim" : trial_stim},  ignore_index = True)
+    # if escape if pressed - end the experiment
+    elif key[0] == "escape":
+        core.quit()
+    # record w an p keypress
+    elif key [0] == "w":
+        logfile = logfile.append({
+            "timestamp" : date, 
+            "experiment_ID" : exp_ID, 
+            "subject" : P2_ID,
+            "r_len" : r_len,
+            "handedness" : P2_handedness,
+            "vision" : P2_vision,
+            "colorvision" : P2_colorvision,
+            "age" : P2_age,
+            "gender" : P2_gender,
+            "nationality" : P2_nationality,
+            "r_type" : P2_r_type,
+            "IOS" : P2_IOS, 
+            "key_press" : "w",
+            "rt" : rt,
+            "trial_stim" : trial_stim},  ignore_index = True)
+    elif key [0] == "p":
+        logfile = logfile.append({
+            "timestamp" : date, 
+            "experiment_ID" : exp_ID, 
+            "subject" : P1_ID,
+            "r_len" : r_len,
+            "handedness" : P1_handedness,
+            "vision" : P1_vision,
+            "colorvision" : P1_colorvision,
+            "age" : P1_age,
+            "gender" : P1_gender,
+            "nationality" : P1_nationality,
+            "r_type" : P1_r_type,
+            "IOS" : P1_IOS, 
+            "key_press" : "p",
+            "rt" : rt,
+            "trial_stim" : trial_stim},  ignore_index = True)
 
 ### Saving logfile ###
 # logfilename
-logfilename = "logfiles/{}_{}.csv".format(date, ID)
+logfilename = "logfiles/{}_{}.csv".format(date, exp_ID)
 logfile.to_csv(logfilename)
 
 ### Goodbye text ###

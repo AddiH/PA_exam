@@ -86,19 +86,26 @@ d <- d %>%
   )
 ```
 
-### Add ID for each participant
-```{r}
-d$subject <- d %>% 
-  group_indices(key_press) 
-```
-
-
 ### Remove slow trials
 ```{r}
 d <- d %>% 
   # Trials where response was not within 1500 ms
   filter(key_press != "none")
 ```
+
+### Add ID for each participant
+```{r}
+d$subject <- d %>% 
+  group_indices(pressor_of_key, ID) 
+```
+
+```{r}
+# Check that it works
+d %>% 
+  group_by(subject) %>% 
+  summarise(mean(rt))
+```
+
 
 ### Remove rt +- 3 SD
 ```{r}
