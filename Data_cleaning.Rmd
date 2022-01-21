@@ -1,0 +1,122 @@
+---
+title: "Data_cleaning"
+author: "Astrid Elmann"
+date: "1/19/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pacman::p_load(tidyverse, readbulk)
+```
+
+```{r, message = FALSE}
+# load data
+d <- read_bulk(
+  directory = 'logfiles',
+  fun = read_csv
+  )
+```
+
+```{r}
+glimpse(d)
+```
+
+
+### Check that no ID's are aciddentially identical
+```{r}
+# Check that these two dfs have the same number of rows
+ID <- d %>% 
+  group_by(ID) %>% 
+  count(ID)
+
+files <- d %>% 
+  group_by(File) %>% 
+  count(File)
+```
+
+### Check the r_len variable
+```{r}
+unique(d$r_len)
+```
+
+### Check the nationality variables
+```{r}
+unique(d$r_len)
+```
+
+### Check that everyone is righthanded, normal vision and not colorblind
+```{r}
+unique(d$P1_isanormalperson)
+unique(d$P2_isanormalperson)
+```
+
+
+### Add congruency column
+```{r}
+d <- d %>% 
+  mutate(
+    congruency = ifelse(trial_stim == "BR" | trial_stim == "YL", 'congruent', 'incongruent'),
+    congruency = ifelse(trial_stim == 'BM' | trial_stim == "YM", 'neutral', congruency),
+    congruency = as.factor(congruency),
+  )
+```
+
+### Add accuracy column
+```{r}
+d <- d %>% 
+  mutate(
+    accuracy = ifelse(
+      ((trial_stim == "BR" | trial_stim == "BM" | trial_stim == "BL") & key_press == "p") |
+      ((trial_stim == "YR" | trial_stim == "YM" | trial_stim == "YL") & key_press == "w"), 
+      'correct', 'error'),
+    accuracy = as.factor(accuracy)
+  )
+
+# Getting no. of error trials
+table(d$accuracy)["error"]
+```
+
+### Add source of keypress
+``` {r}
+d <- d %>% 
+  mutate(
+    pressor_of_key = ifelse(key_press == "p", 'P1', 'P2'),
+    pressor_of_key = as.factor(pressor_of_key)
+  )
+```
+
+### Add ID for each participant
+```{r}
+d$subject <- d %>% 
+  group_indices(key_press) 
+```
+
+
+### Remove slow trials
+```{r}
+d <- d %>% 
+  # Trials where response was not within 1500 ms
+  filter(key_press != "none")
+```
+
+### Remove rt +- 3 SD
+```{r}
+# Define upper and lower boundaries
+upper <- mean(d$rt) + 3 * (sd(d$rt))
+lower <- mean(d$rt) - 3 * (sd(d$rt))
+
+d <- d %>% 
+  filter(rt <= upper) %>% 
+  filter(rt >= -lower)
+
+```
+
+### Save the df
+```{r}
+write_csv(d, "clean_data.csv")
+```
+
+
+
+

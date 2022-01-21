@@ -1,0 +1,95 @@
+---
+title: "Data_analyse"
+author: "Astrid Elmann"
+date: "1/20/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pacman::p_load(tidyverse, readbulk, wesanderson)
+```
+
+```{r}
+# load data
+with_errors <- read_csv("clean_data.csv",
+              col_names = TRUE,
+              col_types = cols(
+                timestamp = "f", 
+                ID = "n", 
+                r_len = "n",
+                P1_age = "f",
+                P1_gender = "f",
+                P1_nationality = "f",
+                P1_r_type = "f",
+                P1_IOS = "f", 
+                P2_age = "n", 
+                P2_gender = "f",
+                P2_nationality = "f",
+                P2_r_type = "f",
+                P2_IOS = "f", 
+                key_press = "f",
+                rt = "n",
+                trial_stim = "f",
+                congruency = "f",
+                accuracy = "f",
+                pressor_of_key = "f"
+              ))
+
+```
+
+```{r}
+# remove error trials
+d <- with_errors %>% 
+  filter(accuracy == "correct") %>% 
+  filter(congruency != "neutral")
+```
+
+# Sirid code
+```{r}
+# getting a nice Wes Anderson color palette
+
+# I like this one
+#wes_palette('Darjeeling1')
+
+# save it in a variable to be used when plotting
+pal <- wes_palettes$Darjeeling1
+```
+
+### Plot mean RT with SE errorbars
+```{r}
+with_errors %>% 
+  filter(
+    accuracy == 'correct'
+    ) %>% 
+ggplot() + 
+  aes(x = congruency, y = rt, color = congruency) +
+  # creating the geom points of the mean rt of  each congruency
+  stat_summary(fun = "mean", geom = "point", size = 3, color = pal[1:3]) +
+  # adding the error bars
+  stat_summary(fun.data = "mean_se", geom = "errorbar", width = .1, color = pal[1:3]) +
+  # adding the connecting line between the points 
+  stat_summary(fun = 'mean', geom = 'line', color = pal[5], aes(group = 1)) +
+  theme(legend.position = 'None') +
+  labs(title = 'Mean RT of the Simon Task with SE errorbars')
+```
+
+### Visualize the accuracy for each congruency
+```{r}
+with_errors %>% 
+  ggplot() +
+  aes(accuracy, fill = congruency) + 
+  geom_bar() + 
+  facet_grid(~ congruency) +
+  scale_fill_manual(values = pal) +
+  labs(title = 'Accuracy for each congruency') + 
+  theme(legend.position = 'NULL')
+```
+
+
+### Model rt ~ congruency 
+```{r}
+m1 <- lmerTest::lmer(rt ~ congruency + (1|subject), d)
+summary(m1)
+```
+

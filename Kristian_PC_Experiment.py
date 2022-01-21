@@ -11,7 +11,11 @@ import pandas as pd
 
 ### Collecting basic data ###
 # define white box window
-win_box = visual.Window(color = "white", size=(1440, 847), pos=(0,0))
+#win_box = visual.Window(color = "white", size=(1280, 720), pos=(0,0))
+
+# For Kristian:
+win_box = visual.Window(color = "white", size=(2*1280,2*720), pos=(0,0))
+
 
 ## Get nicknames ##
 # define dialogue box
