@@ -1,0 +1,7 @@
+,timestamp,experiment_ID,subject,r_len,handedness,vision,colorvision,age,gender,nationality,r_type,IOS,key_press,rt,trial_stim
+0,2022_Jan_21_1248,63312,32146,34,Right,Yes,No,43,Female,crdd,Friends,4,p,0.6430722090008203,BM
+1,2022_Jan_21_1248,63312,62817,34,Ambidextrous,Yes,"Yes, but I can clearly tell the difference between blue and yellow",rfaxs,Female,rfaxs,Friends,4,w,0.34707991598406807,YL
+2,2022_Jan_21_1248,63312,62817,34,Ambidextrous,Yes,"Yes, but I can clearly tell the difference between blue and yellow",rfaxs,Female,rfaxs,Friends,4,w,0.5145653329964262,YM
+3,2022_Jan_21_1248,63312,62817,34,Ambidextrous,Yes,"Yes, but I can clearly tell the difference between blue and yellow",rfaxs,Female,rfaxs,Friends,4,w,0.5033656250161584,YR
+4,2022_Jan_21_1248,63312,62817,34,Ambidextrous,Yes,"Yes, but I can clearly tell the difference between blue and yellow",rfaxs,Female,rfaxs,Friends,4,w,0.5851028340111952,BL
+5,2022_Jan_21_1248,63312,62817,34,Ambidextrous,Yes,"Yes, but I can clearly tell the difference between blue and yellow",rfaxs,Female,rfaxs,Friends,4,w,0.6958722919807769,BR

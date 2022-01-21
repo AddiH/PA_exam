@@ -15,31 +15,28 @@ pacman::p_load(tidyverse, readbulk, wesanderson, lmerTest)
 with_errors <- read_csv("clean_data.csv",
               col_names = TRUE,
               col_types = cols(
-                timestamp = "f", 
-                ID = "n", 
+                timestamp = "c", 
+                experiment_ID = "f", 
+                subject = "f",
                 r_len = "n",
-                P1_age = "f",
-                P1_gender = "f",
-                P1_nationality = "f",
-                P1_r_type = "f",
-                P1_IOS = "f", 
-                P2_age = "n", 
-                P2_gender = "f",
-                P2_nationality = "f",
-                P2_r_type = "f",
-                P2_IOS = "f", 
+                handedness = "f",
+                vision = "f",
+                colorvision = "f",
+                age = "c", #@ fix this
+                gender = "f",
+                nationality = "f",
+                r_type = "f",
+                IOS = "f", 
                 key_press = "f",
                 rt = "n",
                 trial_stim = "f",
                 congruency = "f",
-                accuracy = "f",
-                pressor_of_key = "f"
+                accuracy = "f"
               ))
-
 ```
 
 ```{r}
-# remove error trials
+# remove error and neutral trials
 d <- with_errors %>% 
   filter(accuracy == "correct") %>% 
   filter(congruency != "neutral")

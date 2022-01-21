@@ -27,12 +27,32 @@ glimpse(d)
 ```{r}
 # Check that these two dfs have the same number of rows
 ID <- d %>% 
-  group_by(ID) %>% 
-  count(ID)
+  group_by(experiment_ID) %>% 
+  count(experiment_ID)
 
 files <- d %>% 
   group_by(File) %>% 
   count(File)
+
+# And this is double that (Might have one xtra "none", this will be removed later)
+subjects <- d %>% 
+  group_by(subject) %>% 
+  count(subject)
+```
+
+### Remove slow trials
+```{r}
+d <- d %>% 
+  # Trials where response was not within 1500 ms
+  filter(key_press != "none")
+```
+
+### Remove colorblind, lefthanded (and ambidextrous) and people with poor vision
+```{r}
+d <- d %>% 
+    filter(colorvision == "No" | colorvision == "Yes, but I can clearly tell the difference between blue and yellow") %>% 
+    filter(vision == "Yes") %>% 
+    filter(handedness == "Right")
 ```
 
 ### Check the r_len variable
@@ -42,15 +62,8 @@ unique(d$r_len)
 
 ### Check the nationality variables
 ```{r}
-unique(d$r_len)
+unique(d$nationality)
 ```
-
-### Check that everyone is righthanded, normal vision and not colorblind
-```{r}
-unique(d$P1_isanormalperson)
-unique(d$P2_isanormalperson)
-```
-
 
 ### Add congruency column
 ```{r}
@@ -77,36 +90,6 @@ d <- d %>%
 table(d$accuracy)["error"]
 ```
 
-### Add source of keypress
-``` {r}
-d <- d %>% 
-  mutate(
-    pressor_of_key = ifelse(key_press == "p", 'P1', 'P2'),
-    pressor_of_key = as.factor(pressor_of_key)
-  )
-```
-
-### Remove slow trials
-```{r}
-d <- d %>% 
-  # Trials where response was not within 1500 ms
-  filter(key_press != "none")
-```
-
-### Add ID for each participant
-```{r}
-d$subject <- d %>% 
-  group_indices(pressor_of_key, ID) 
-```
-
-```{r}
-# Check that it works
-d %>% 
-  group_by(subject) %>% 
-  summarise(mean(rt))
-```
-
-
 ### Remove rt +- 3 SD
 ```{r}
 # Define upper and lower boundaries
@@ -125,5 +108,17 @@ write_csv(d, "clean_data.csv")
 ```
 
 
+<!-- ### Add ID for each participant -->
+<!-- ```{r} -->
+<!-- d$subject <- d %>% -->
+<!--   group_indices(pressor_of_key, ID) -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- # Check that it works -->
+<!-- d %>% -->
+<!--   group_by(subject) %>% -->
+<!--   summarise(mean(rt)) -->
+<!-- ``` -->
 
 

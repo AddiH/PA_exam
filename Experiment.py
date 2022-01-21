@@ -176,6 +176,7 @@ YL = visual.ImageStim(win, image = "stimuli/YL.png")
 BM = visual.ImageStim(win, image = "stimuli/BM.png")
 YM= visual.ImageStim(win, image = "stimuli/YM.png")
 f_cross = visual.ImageStim(win, image = "stimuli/fix_cross.png")
+
 #
 ## Include 2 of each stimuli in pactise trials
 #prac_order = [BR, BL, YR, YL, BM, YM] * 2
