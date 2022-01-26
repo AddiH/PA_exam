@@ -103,7 +103,7 @@ dialog_4.show()
 
 # dialog collecting data from P2
 dialog_5 = gui.Dlg(title = "{} information".format(P1_nn))
-dialog_5.addText('{}, please fill out the following information on yourself without {} being able to see the screen.'.format(P1_nn, P2_nn))
+dialog_5.addText('{}, please fill out the following information on yourself without {} being able to see the screen.'.format(P2_nn, P1_nn))
 dialog_5.addText('Please confirm that you have normal or corrected to normal vision, that you are right handed and not coloblind.')
 dialog_5.addField("Are you left or right handed?", choices = ["-", "Right", "Left", "Ambidextrous"])
 dialog_5.addField("Is your vision normal or corrected to normal?", choices = ["-", "Yes", "No"])
@@ -111,16 +111,16 @@ dialog_5.addField("Are you colorblind?", choices = ["-", "No", "Yes", "Yes, but 
 dialog_5.addField("Age:")
 dialog_5.addField("Gender:", choices = ["-","Female", "Male", "Other"])
 dialog_5.addField("Nationality:")
-dialog_5.addText('How would you describe your relationship with {}?'.format(P2_nn))
+dialog_5.addText('How would you describe your relationship with {}?'.format(P1_nn))
 dialog_5.addField("Relationship type:", choices = ["-","Friends", "Family", "Romantic"])
-dialog_5.addText('{} continue to the next task. Do NOT call {} back yet'.format(P1_nn, P2_nn))
+dialog_5.addText('{} continue to the next task. Do NOT call {} back yet'.format(P2_nn, P1_nn))
 
 dialog_5.show()
 if dialog_5.OK:
     P2_handedness = dialog_5.data[0]
     P2_vision = dialog_5.data[1]
     P2_colorvision= dialog_5.data[2]
-    P2_age = dialog_5.data[5]
+    P2_age = dialog_5.data[3]
     P2_gender = dialog_5.data[4]
     P2_nationality = dialog_5.data[5]
     P2_r_type = dialog_5.data[6]
@@ -177,49 +177,49 @@ BM = visual.ImageStim(win, image = "stimuli/BM.png")
 YM= visual.ImageStim(win, image = "stimuli/YM.png")
 f_cross = visual.ImageStim(win, image = "stimuli/fix_cross.png")
 
-#
-## Include 2 of each stimuli in pactise trials
-#prac_order = [BR, BL, YR, YL, BM, YM] * 2
-## randomise order
-#random.shuffle(prac_order)
-#
-#for stim in prac_order:
-#    f_cross.draw()
-#    win.flip()
-#    core.wait(1)
-#    stim.draw()
-#    win.flip()
-#    # wait for the participant to press W or P or esc
-#    key = event.waitKeys(keyList = ["w", "p", "escape"], maxWait=(1.5))
-#
-## if escape if pressed - end the experiment
-#    # if no key is pressed, show "too slow"
-#    if key == None:
-#        text = visual.TextStim(win, text = "Too slow")
-#        text.draw()
-#        win.flip()
-#        core.wait(2)
-#    # if esc is pressed quit the experiment
-#    elif key[0] == "escape":
-#        core.quit()
-#    # if w is pressed when a  yellow circle is shown, show "correct"
-#    elif (key [0] == "w" and (stim == YR or stim == YL or stim == YM)):
-#        text = visual.TextStim(win, text = "Correct", color = "green")
-#        text.draw()
-#        win.flip()
-#        core.wait(2)
-#    # if p is pressed when a  blue circle is shown, show "correct"
-#    elif (key [0] == "p" and (stim == BR or stim == BL or stim == BM)):
-#        text = visual.TextStim(win, text = "Correct", color = "green")
-#        text.draw()
-#        win.flip()
-#        core.wait(2)
-#    # if the wrong key is pressed, show "error"
-#    else:  
-#        text = visual.TextStim(win, text = "Error", color = "red")
-#        text.draw()
-#        win.flip()
-#        core.wait(2)
+
+# Include 2 of each stimuli in pactise trials
+prac_order = [BR, BL, YR, YL, BM, YM] * 2
+# randomise order
+random.shuffle(prac_order)
+
+for stim in prac_order:
+   f_cross.draw()
+   win.flip()
+   core.wait(1)
+   stim.draw()
+   win.flip()
+   # wait for the participant to press W or P or esc
+   key = event.waitKeys(keyList = ["w", "p", "escape"], maxWait=(1.5))
+
+# if escape if pressed - end the experiment
+   # if no key is pressed, show "too slow"
+   if key == None:
+       text = visual.TextStim(win, text = "Too slow")
+       text.draw()
+       win.flip()
+       core.wait(2)
+   # if esc is pressed quit the experiment
+   elif key[0] == "escape":
+       core.quit()
+   # if w is pressed when a  yellow circle is shown, show "correct"
+   elif (key [0] == "w" and (stim == YR or stim == YL or stim == YM)):
+       text = visual.TextStim(win, text = "Correct", color = "green")
+       text.draw()
+       win.flip()
+       core.wait(2)
+   # if p is pressed when a  blue circle is shown, show "correct"
+   elif (key [0] == "p" and (stim == BR or stim == BL or stim == BM)):
+       text = visual.TextStim(win, text = "Correct", color = "green")
+       text.draw()
+       win.flip()
+       core.wait(2)
+   # if the wrong key is pressed, show "error"
+   else:  
+       text = visual.TextStim(win, text = "Error", color = "red")
+       text.draw()
+       win.flip()
+       core.wait(2)
 
 
 ### Logfile ###
@@ -256,17 +256,17 @@ text.draw()
 win.flip()
 event.waitKeys(keyList = ["space"])
 
-## actual block of trials
-#real_trials = [BR, BL, YR, YL] * 14
-#filler_trials = [BM, YM] * 7
-#order = real_trials + filler_trials
-#random.shuffle(order)
-
-# short version for testing
-real_trials = [BR, BL, YR, YL]
-filler_trials = [BM, YM]
+# actual block of trials
+real_trials = [BR, BL, YR, YL] * 14
+filler_trials = [BM, YM] * 7
 order = real_trials + filler_trials
 random.shuffle(order)
+
+# # short version for testing
+# real_trials = [BR, BL, YR, YL]
+# filler_trials = [BM, YM]
+# order = real_trials + filler_trials
+# random.shuffle(order)
 
 # define stopwatch
 stopwatch = core.Clock()

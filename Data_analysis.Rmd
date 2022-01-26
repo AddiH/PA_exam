@@ -1,0 +1,334 @@
+---
+title: "Data_analyse"
+author: "Astrid Elmann"
+date: "1/20/2022"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pacman::p_load(tidyverse, readbulk, wesanderson, lmerTest, rstatix, ggpubr, plyr, dplyr)
+```
+
+```{r, echo=FALSE}
+#+++++++++++++++++++++++++
+# Function to calculate the mean and the standard deviation
+  # for each group
+#+++++++++++++++++++++++++
+# data : a data frame
+# varname : the name of a column containing the variable
+  #to be summariezed
+# groupnames : vector of column names to be used as
+  # grouping variables
+data_summary <- function(data, varname, groupnames){
+  require(plyr)
+  summary_func <- function(x, col){
+    c(mean = mean(x[[col]], na.rm=TRUE),
+      sd = sd(x[[col]], na.rm=TRUE))
+  }
+  data_sum<-ddply(data, groupnames, .fun=summary_func,
+                  varname)
+  data_sum <- rename(data_sum, c("mean" = varname))
+ return(data_sum)
+}
+```
+
+```{r, echo=FALSE}
+# load data
+with_error_neutral <- read_csv("clean_data.csv",
+              col_names = TRUE,
+              col_types = cols(
+                timestamp = "c", 
+                experiment_ID = "f", 
+                subject = "f",
+                r_len = "n",
+                handedness = "f",
+                vision = "f",
+                colorvision = "f",
+                age = "n",
+                gender = "f",
+                nationality = "f",
+                r_type = "f",
+                IOS = col_factor(ordered = TRUE), 
+                key_press = "f",
+                rt = "n",
+                trial_stim = "f",
+                congruency = "f",
+                accuracy = "f"
+              ))
+```
+
+```{r, include=FALSE}
+# Make IOS ordered variable (noone chose 2 or 7)
+with_error_neutral$IOS <- ordered(with_error_neutral$IOS, levels = c(1, 3, 4, 5, 6))
+
+#with_error_neutral$IOS <- ordered(with_error_neutral$IOS, levels = c(1, 2, 3, 4, 5, 6, 7))
+
+class(with_error_neutral$IOS)
+levels(with_error_neutral$IOS)
+```
+
+
+```{r, echo=FALSE}
+# remove error and neutral trials
+d <- with_error_neutral %>% 
+  filter(accuracy == "correct") %>% 
+  filter(congruency != "neutral")
+```
+
+# Plots
+```{r, echo=FALSE}
+# getting a nice Wes Anderson color palette
+
+# save it in a variable to be used when plotting
+pal <- wes_palettes$FantasticFox1
+```
+
+### Plot mean RT with SE errorbars
+```{r, echo=FALSE}
+with_error_neutral %>%
+  filter(
+    accuracy == 'correct'
+    ) %>%
+ggplot() +
+  aes(x = congruency, y = rt, color = congruency) +
+  # creating the geom points of the mean rt of  each congruency
+  stat_summary(fun = "mean", geom = "point", size = 3, color = pal[1:3]) +
+  # adding the error bars
+  stat_summary(fun.data = "mean_se", geom = "errorbar", width = .1, color = pal[1:3]) +
+  # adding the connecting line between the points
+  stat_summary(fun = 'mean', geom = 'line', color = pal[5], aes(group = 1)) +
+  theme(legend.position = 'None') +
+  labs(title = 'Mean RT of the Simon Task with SE errorbars')
+```
+
+## Boxplot
+
+```{r}
+with_error_neutral %>%
+  filter(
+    accuracy == 'correct'
+    ) %>%
+ggplot(aes(x = congruency, y = rt, fill = congruency)) +
+  geom_boxplot(outlier.colour=pal[5]) +
+  scale_fill_manual(values = pal) +
+  labs(title = 'Boxplot - rt over congruency') +
+  theme(legend.position = 'None') 
+```
+
+```{r, echo=FALSE}
+df1 <- data_summary(d, varname = "rt", groupnames = "congruency")
+```
+
+```{r, echo=FALSE}
+ggplot(df1,(aes( x = congruency, y = rt, fill = congruency))) + 
+  geom_bar(stat = "identity", position=position_dodge()) +
+  geom_errorbar(aes(ymin=rt-sd, ymax=rt+sd), width=.2,
+                 position=position_dodge(.9)) +
+  scale_fill_manual(values = pal) 
+```
+
+```{r, echo=FALSE}
+
+mu <- ddply(d, "congruency", summarise, grp.mean = mean(rt))
+
+ggplot(d,(aes(x = rt, fill = congruency))) + 
+  geom_density(alpha=.4) +
+  geom_vline(data = mu, aes(xintercept=grp.mean, color=congruency),
+             linetype="solid") +
+  scale_fill_manual(values = pal[3:4]) +
+  scale_color_manual(values = pal[3:4]) +
+  labs(title = 'Density plot with mean line')
+```
+
+### Visualize the accuracy for each congruency
+```{r, echo=FALSE}
+with_error_neutral %>% 
+  ggplot() +
+  aes(accuracy, fill = congruency) + 
+  geom_bar() + 
+  facet_grid(~ congruency) +
+  scale_fill_manual(values = pal) +
+  labs(title = 'Accuracy for each congruency') + 
+  theme(legend.position = 'NULL')
+```
+
+```{r, echo=FALSE}
+# d %>%
+# ggplot() +
+#   aes(x = IOS, y = rt, color = IOS) +
+#   # creating the geom points of the mean rt of  each congruency
+#   stat_summary(fun = "mean", geom = "point", size = 3, color = pal[1:3]) +
+#   # adding the error bars
+#   stat_summary(fun.data = "mean_se", geom = "errorbar", width = .1, color = pal[1:3]) +
+#   # adding the connecting line between the points
+#   stat_summary(fun = 'mean', geom = 'line', color = pal[5], aes(group = 1)) +
+#   theme(legend.position = 'None') +
+#   labs(title = 'Mean RT by IOS')
+```
+
+```{r, echo=FALSE}
+df2 <- data_summary(d, varname = "rt", groupnames = c("congruency", "IOS"))
+```
+
+# Se her!!
+> Vi laver en standard joint simon task. To personer sidder ved en computer, én skal reagere når den cirkel der dukker op på skærmen er blå, den anden når cirklen er gul. Ved incongruent trials har cirklen været i modsatte side af hvor forsøgspersonen der skal trykke sidder (Personen sidder f.eks. til højre, og cirklen dukker op i venstre side af skærmen). Congruent trials har cirklen og personen i samme side.
+Vi har desuden samlet data om hvor tætte forsøgsdeltagerne føler de er på hinanden. 1 værende ikke særlig tætte, og 7 værende meget tætte.
+I alt er der 3 interresante variabler:
+
+ rt = reaktionstid i sekunder, kontunierlig skala
+ 
+ congruency = cirklens position, factor
+ 
+ IOS = Personernes "tæthed", ordinal factor
+
+```{r, echo=FALSE}
+ggplot(df2,(aes( x = IOS, y = rt, fill = congruency))) + 
+  geom_bar(stat = "identity", position=position_dodge()) +
+  geom_errorbar(aes(ymin=rt-sd, ymax=rt+sd), width=.2,
+                 position=position_dodge(.9)) +
+  scale_fill_manual(values = pal) 
+```
+
+# Testing hypothesis
+# Assumptions for anova
+
+## Outliers
+
+```{r}
+d %>% 
+  select(congruency, rt) %>% 
+  group_by(congruency) %>%
+  identify_outliers(rt)
+```
+
+> 5 outliers are found, but as they are not extreme (and we also already removed +-3SD) we will leave them in
+
+## Normality
+```{r}
+# Build the linear model
+model  <- lm(rt ~ IOS * congruency, d)
+# Create a QQ plot of residuals
+ggqqplot(residuals(model))
+```
+
+> Looks okay.
+
+```{r}
+# Compute Shapiro-Wilk test of normality
+shapiro_test(residuals(model))
+```
+
+> P-value of 0.0003 means that it is statisticly different than a normal distribution :(
+
+### Transform data and try again
+```{r}
+d$log_rt <- log(d$rt)
+# Build the linear model
+model  <- lm(log_rt ~ IOS * congruency, d)
+# Create a QQ plot of residuals
+ggqqplot(residuals(model))
+# Compute Shapiro-Wilk test of normality
+shapiro_test(residuals(model))
+```
+
+> Allright! That is at least better, we'll take the log tranformation
+
+### Normality within groups
+```{r}
+ggqqplot(d, "log_rt", facet.by = "congruency")
+d %>%
+  group_by(congruency) %>%
+  shapiro_test(log_rt)
+```
+
+> Oh no :( It is bad again.. We'll leave that for now, hopefully more participants will solve that problem hehe)
+
+## Homogneity of variance assumption
+```{r}
+plot(model, 1)
+```
+
+> Idk how to read this, lets look at the numbers
+
+
+```{r}
+d %>% levene_test(log_rt ~ IOS * congruency)
+```
+
+> it's baaaaad oh noes.
+
+# Standard anova
+```{r}
+# Normal anova
+res.aov <- aov(log_rt ~ IOS * congruency, d)
+summary(res.aov)
+```
+
+>This one points to significant differences, but we don't meet the assumptions
+
+# Alternatives to normal anova 
+```{r}
+# Kruskal-Wallis anova (for non-normal data) - does not work, can only take one independent variable
+kruskal.test(log_rt ~ IOS * congruency, d)
+# The data that is not transformed has the same output, so lets just use that
+kruskal.test(rt ~ IOS * congruency, d)
+```
+
+```{r}
+# Kruskal-Wallis anova (for non-normal data) - does not work, can only take one independent variable
+kruskal.test(log_rt ~ congruency, d)
+# The data that is not transformed has the same output, so lets just use that
+kruskal.test(rt ~ congruency, d)
+```
+
+```{r}
+# Kruskal-Wallis anova (for non-normal data) - does not work, can only take one independent variable
+kruskal.test(log_rt ~ IOS, d)
+# The data that is not transformed has the same output, so lets just use that
+kruskal.test(rt ~ IOS, d)
+```
+
+> So this test is probably the one to go with, as it does not require the assumption of equal variances. (Homogneity of variance assumption) Or the normality assumption
+
+# Do we even have a simon effect?
+## Assumptions
+### Outlier assumption
+```{r}
+d %>% 
+  select(congruency, log_rt) %>% 
+  group_by(congruency) %>%
+  identify_outliers(log_rt)
+```
+
+> One, not-extreme outlier is ok.
+
+### Normality assumption
+```{r}
+# Build the linear model
+model  <- lm(log_rt ~ congruency, d)
+# Create a QQ plot of residuals
+ggqqplot(residuals(model))
+# Compute Shapiro-Wilk test of normality
+shapiro_test(residuals(model))
+```
+
+> Data is closer to (but isn't) normal with log transformation
+
+### Homogneity of variance assumption 
+```{r}
+plot(model,1)
+d %>% levene_test(log_rt ~ congruency)
+```
+
+> Homogneity of variance assumption is aokay.
+
+## Anova
+```{r}
+#Kruskal-Wallis anova, that is okay with non-normal data:
+kruskal.test(log_rt ~ congruency, d)
+```

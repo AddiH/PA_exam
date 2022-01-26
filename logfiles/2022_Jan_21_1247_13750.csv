@@ -1,7 +1,0 @@
-,timestamp,experiment_ID,subject,r_len,handedness,vision,colorvision,age,gender,nationality,r_type,IOS,key_press,rt,trial_stim
-0,2022_Jan_21_1247,13750,18210,4,Left,Yes,No,34,Male,dggfg,Friends,3,p,0.6627502919873223,BL
-1,2022_Jan_21_1247,13750,71606,4,Right,Yes,No,gdrfc,Other,gdrfc,Friends,5,w,0.39803004197892733,YR
-2,2022_Jan_21_1247,13750,18210,4,Left,Yes,No,34,Male,dggfg,Friends,3,p,0.5209355000115465,BM
-3,2022_Jan_21_1247,13750,71606,4,Right,Yes,No,gdrfc,Other,gdrfc,Friends,5,w,0.45593470800668,YM
-4,2022_Jan_21_1247,13750,18210,4,Left,Yes,No,34,Male,dggfg,Friends,3,p,0.4699317080085166,BR
-5,2022_Jan_21_1247,13750,none,4,none,none,none,none,none,none,none,none,none,1.5003947500081267,YL

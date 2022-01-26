@@ -1,7 +1,417 @@
 X1,timestamp,experiment_ID,subject,r_len,handedness,vision,colorvision,age,gender,nationality,r_type,IOS,key_press,rt,trial_stim,File,congruency,accuracy
-0,2022_Jan_21_1239,39538,72488,34,Right,Yes,No,34,Female,sfefs,Friends,3,p,0.8252245410112664,YR,2022_Jan_21_1239_39538.csv,incongruent,error
-3,2022_Jan_21_1239,39538,72488,34,Right,Yes,No,34,Female,sfefs,Friends,3,p,0.6584033749822993,YL,2022_Jan_21_1239_39538.csv,congruent,error
-5,2022_Jan_21_1239,39538,72488,34,Right,Yes,No,34,Female,sfefs,Friends,3,p,0.6147197080135811,BM,2022_Jan_21_1239_39538.csv,neutral,correct
-1,2022_Jan_21_1247,13750,71606,4,Right,Yes,No,gdrfc,Other,gdrfc,Friends,5,w,0.39803004197892733,YR,2022_Jan_21_1247_13750.csv,incongruent,correct
-3,2022_Jan_21_1247,13750,71606,4,Right,Yes,No,gdrfc,Other,gdrfc,Friends,5,w,0.45593470800668,YM,2022_Jan_21_1247_13750.csv,neutral,correct
-0,2022_Jan_21_1248,63312,32146,34,Right,Yes,No,43,Female,crdd,Friends,4,p,0.6430722090008203,BM,2022_Jan_21_1248_63312.csv,neutral,correct
+1,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.2829296660020191,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+2,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.616317625001102,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+3,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.39944999999715947,BR,2022_Jan_23_1659_82203.csv,congruent,correct
+4,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.6027379169972846,BL,2022_Jan_23_1659_82203.csv,incongruent,correct
+5,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.42939824999848497,BR,2022_Jan_23_1659_82203.csv,congruent,correct
+6,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.36818962499819463,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+7,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.36767233299906366,BR,2022_Jan_23_1659_82203.csv,congruent,correct
+8,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.6130902499971853,YM,2022_Jan_23_1659_82203.csv,neutral,correct
+9,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.49954970800172305,BL,2022_Jan_23_1659_82203.csv,incongruent,correct
+10,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.4442287909987499,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+11,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.4483610420029436,BM,2022_Jan_23_1659_82203.csv,neutral,correct
+12,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.24588491700342274,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+13,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.5273588330019265,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+14,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.5476115419987764,YM,2022_Jan_23_1659_82203.csv,neutral,correct
+15,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.46442083299916703,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+16,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.5529691669980821,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+17,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.37447070900088875,BR,2022_Jan_23_1659_82203.csv,congruent,correct
+18,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.5787907500016445,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+19,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.3472402499974123,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+20,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.4713617500019609,BM,2022_Jan_23_1659_82203.csv,neutral,correct
+21,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.35280991599938716,BR,2022_Jan_23_1659_82203.csv,congruent,error
+22,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.4941848749986093,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+23,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.5004594580022967,BL,2022_Jan_23_1659_82203.csv,incongruent,correct
+24,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.35960079199867323,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+25,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.42604829099946073,BL,2022_Jan_23_1659_82203.csv,incongruent,correct
+26,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.286645291998866,YM,2022_Jan_23_1659_82203.csv,neutral,correct
+27,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.3085683749995951,BL,2022_Jan_23_1659_82203.csv,incongruent,error
+28,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.574327207999886,BR,2022_Jan_23_1659_82203.csv,congruent,correct
+29,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.2502109580018441,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+30,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.5984128339987365,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+31,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.4203834170002665,BR,2022_Jan_23_1659_82203.csv,congruent,correct
+32,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.46507020799981547,BR,2022_Jan_23_1659_82203.csv,congruent,correct
+33,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.5579377499998373,BM,2022_Jan_23_1659_82203.csv,neutral,correct
+34,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.4645922920026351,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+35,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.4257622919976711,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+36,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.4886444589974417,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+37,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.32041958300033,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+38,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.5461401249995106,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+39,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.4364694169998984,BL,2022_Jan_23_1659_82203.csv,incongruent,correct
+40,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.387614625000424,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+41,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.4971172089972242,BM,2022_Jan_23_1659_82203.csv,neutral,correct
+42,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.47561533299813163,YM,2022_Jan_23_1659_82203.csv,neutral,correct
+43,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.43257583399827126,BL,2022_Jan_23_1659_82203.csv,incongruent,correct
+44,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.5490350420004688,BL,2022_Jan_23_1659_82203.csv,incongruent,correct
+45,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.5193988339997304,BM,2022_Jan_23_1659_82203.csv,neutral,correct
+46,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.49218699999983073,YM,2022_Jan_23_1659_82203.csv,neutral,correct
+47,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.42884816699734074,BR,2022_Jan_23_1659_82203.csv,congruent,correct
+48,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.25788687500244123,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+49,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.35721658400143497,BL,2022_Jan_23_1659_82203.csv,incongruent,error
+50,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.48189012500006356,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+51,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.624892791001912,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+52,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.4562674579974555,BM,2022_Jan_23_1659_82203.csv,neutral,correct
+53,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.4915066249996016,YM,2022_Jan_23_1659_82203.csv,neutral,correct
+54,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.45460204199844156,BM,2022_Jan_23_1659_82203.csv,neutral,correct
+55,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.32011824999790406,YR,2022_Jan_23_1659_82203.csv,incongruent,correct
+56,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.3502577499966719,BR,2022_Jan_23_1659_82203.csv,congruent,correct
+57,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.4829738329972315,BR,2022_Jan_23_1659_82203.csv,congruent,correct
+58,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.2259319169970695,BL,2022_Jan_23_1659_82203.csv,incongruent,error
+59,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.46257212499767775,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+60,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.4646700419980334,BR,2022_Jan_23_1659_82203.csv,congruent,correct
+61,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.3176024580025114,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+62,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.697193583000626,YM,2022_Jan_23_1659_82203.csv,neutral,correct
+63,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.37366895800005295,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+64,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.40053462499781745,BL,2022_Jan_23_1659_82203.csv,incongruent,correct
+65,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.5849854169973696,BL,2022_Jan_23_1659_82203.csv,incongruent,correct
+66,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.5569050830017659,BL,2022_Jan_23_1659_82203.csv,incongruent,correct
+67,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.23490216699792654,BL,2022_Jan_23_1659_82203.csv,incongruent,error
+68,2022_Jan_23_1659,82203,46219,60,Right,Yes,No,80,Female,Tysk,Family,3,w,0.5653858749974461,YL,2022_Jan_23_1659_82203.csv,congruent,correct
+69,2022_Jan_23_1659,82203,84019,60,Right,Yes,No,81,Male,Dansk,Romantic,3,p,0.45543850000103703,BR,2022_Jan_23_1659_82203.csv,congruent,correct
+0,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.36045849999936763,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+1,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.4217705829978513,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+2,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.34110054199845763,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+3,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.3202671670005657,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+4,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.4022249589979765,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+5,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.46920395900087897,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+6,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3686887910007499,YM,2022_Jan_23_1724_59680.csv,neutral,correct
+7,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.32849745800194796,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+8,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.31705054199846927,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+9,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.4593864169983135,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+10,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3264080830012972,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+11,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.39736895900205127,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+12,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3284284999972442,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+13,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.30571245899773203,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+14,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.32494737500019255,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+15,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.27773591699951794,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+16,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.3198773340009211,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+17,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.30293333300141967,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+18,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3312097090019961,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+19,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.3004983339997125,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+20,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.44367633299771114,BM,2022_Jan_23_1724_59680.csv,neutral,correct
+21,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.41157912500057137,BM,2022_Jan_23_1724_59680.csv,neutral,correct
+22,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.2948013749992242,YM,2022_Jan_23_1724_59680.csv,neutral,correct
+23,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3870963749977818,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+24,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3474839590016927,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+25,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.35713870900144684,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+26,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.373767000000953,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+27,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.34073404200171353,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+28,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.29936458399970434,YM,2022_Jan_23_1724_59680.csv,neutral,correct
+29,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.2578891670018493,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+30,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3581119169975864,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+31,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3572954579976795,YM,2022_Jan_23_1724_59680.csv,neutral,correct
+32,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.4137716669974907,YM,2022_Jan_23_1724_59680.csv,neutral,correct
+33,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.35973699999885866,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+34,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.32368495800255914,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+35,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.3826697910008079,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+36,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3401270829999703,YM,2022_Jan_23_1724_59680.csv,neutral,correct
+37,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.3271275000006426,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+38,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.4095601250010077,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+39,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3543101250033942,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+40,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3536327080000774,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+41,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.30192266599988216,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+42,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.3666905419995601,BM,2022_Jan_23_1724_59680.csv,neutral,correct
+43,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.3929635419990518,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+44,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.3070220000008703,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+45,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.367072332999669,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+46,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.39634291699985624,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+47,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.36507766700015054,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+48,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.3624977500003297,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+49,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.46888687500177184,BM,2022_Jan_23_1724_59680.csv,neutral,correct
+50,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.2981482909999613,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+51,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3272677079985442,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+52,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.3460487500015006,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+53,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.41543287500098813,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+54,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.29216037500009406,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+55,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.34226508400024613,BM,2022_Jan_23_1724_59680.csv,neutral,correct
+56,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3112360000013723,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+57,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3745370840006217,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+58,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.36325466700145626,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+59,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.3834856249995937,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+60,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.34989545899952645,BM,2022_Jan_23_1724_59680.csv,neutral,correct
+61,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.3004132909991313,BM,2022_Jan_23_1724_59680.csv,neutral,correct
+62,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3261430000020482,YL,2022_Jan_23_1724_59680.csv,congruent,correct
+63,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.2917777499969816,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+64,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.41939279199868906,BL,2022_Jan_23_1724_59680.csv,incongruent,correct
+65,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.4094975419975526,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+66,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.38288816700151074,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+67,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3435094999986177,YM,2022_Jan_23_1724_59680.csv,neutral,correct
+68,2022_Jan_23_1724,59680,77840,3.5,Right,Yes,No,20,Female,Dansk,Family,4,w,0.3906452920018637,YR,2022_Jan_23_1724_59680.csv,incongruent,correct
+69,2022_Jan_23_1724,59680,27122,3.5,Right,Yes,No,22,Male,Dansk,Friends,1,p,0.33201658299731207,BR,2022_Jan_23_1724_59680.csv,congruent,correct
+0,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.4359377999790013,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+1,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.4844382000155747,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+2,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.30810080002993345,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+3,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.3116990998387337,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+4,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.2901234000455588,BM,2022_Jan_25_1607_44412.csv,neutral,correct
+5,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3245341998990625,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+6,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.3217018998693675,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+7,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.2546794000081718,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+8,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.2688951001036912,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+9,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.319144899956882,YM,2022_Jan_25_1607_44412.csv,neutral,correct
+10,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.335727300029248,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+11,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.28829709999263287,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+12,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.32803360000252724,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+13,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.25493050017394125,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+14,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.3824934000149369,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+15,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3572428999468684,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+16,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.36408420000225306,YM,2022_Jan_25_1607_44412.csv,neutral,correct
+17,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.2667279001325369,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+18,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.3833595998585224,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+19,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.30485610011965036,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+20,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.40035659982822835,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+21,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.2501701998990029,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+22,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3255722001194954,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+23,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.34272069996222854,BM,2022_Jan_25_1607_44412.csv,neutral,correct
+24,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.36408769991248846,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+25,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.41868830006569624,YM,2022_Jan_25_1607_44412.csv,neutral,correct
+26,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3710507000796497,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+27,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.34315169998444617,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+28,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.301176100037992,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+29,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3000700001139194,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+30,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.28558959998190403,BM,2022_Jan_25_1607_44412.csv,neutral,correct
+31,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.33963539986871183,BM,2022_Jan_25_1607_44412.csv,neutral,correct
+32,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.40492100012488663,BM,2022_Jan_25_1607_44412.csv,neutral,correct
+33,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.30260640010237694,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+34,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3507258000317961,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+35,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.2554307000245899,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+36,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3884442998096347,YM,2022_Jan_25_1607_44412.csv,neutral,correct
+37,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.2694813997950405,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+38,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.2729201999027282,BM,2022_Jan_25_1607_44412.csv,neutral,correct
+39,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.25931560015305877,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+40,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.283064299961552,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+41,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3382084001787007,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+42,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3232427001930773,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+43,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.30116869998164475,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+44,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.2754720998927951,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+45,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.33841459988616407,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+46,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.287935399916023,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+47,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.2330067998263985,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+48,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3013325999490917,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+49,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3200649998616427,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+50,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.29683630005456507,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+51,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.2956565001513809,YM,2022_Jan_25_1607_44412.csv,neutral,correct
+52,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.35481110005639493,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+53,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.33316730009391904,YM,2022_Jan_25_1607_44412.csv,neutral,correct
+54,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3129432999994606,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+55,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.33072310010902584,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+56,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.44529089983552694,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+57,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.35040379990823567,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+58,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.34269369998946786,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+59,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.31872910005040467,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+60,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.28631659992970526,YR,2022_Jan_25_1607_44412.csv,incongruent,correct
+61,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.27337219985201955,YL,2022_Jan_25_1607_44412.csv,congruent,correct
+62,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.3366427000146359,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+63,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.30101580009795725,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+64,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.3197797001339495,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+65,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.37164560006931424,BR,2022_Jan_25_1607_44412.csv,congruent,correct
+66,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.34919869992882013,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+67,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.3428330000024289,BL,2022_Jan_25_1607_44412.csv,incongruent,correct
+68,2022_Jan_25_1607,44412,69187,4,Right,Yes,No,27,Female,danish,Romantic,5,w,0.3872469998896122,YM,2022_Jan_25_1607_44412.csv,neutral,correct
+69,2022_Jan_25_1607,44412,42559,4,Right,Yes,No,31,Male,Danish,Romantic,6,p,0.30159049993380904,BM,2022_Jan_25_1607_44412.csv,neutral,correct
+0,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3574016670027049,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+1,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.41359520799596794,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+2,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.4639487079984974,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+3,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.34385491700231796,YM,2022_Jan_25_1622_84321.csv,neutral,correct
+4,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.36399275000439957,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+5,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.560435375002271,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+6,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.5925007080004434,BM,2022_Jan_25_1622_84321.csv,neutral,correct
+7,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.38891624999814667,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+8,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.4252867920004064,BM,2022_Jan_25_1622_84321.csv,neutral,correct
+9,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.44608370900095906,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+10,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.38273158299853094,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+11,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.37902641700202366,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+12,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.439246333000483,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+13,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3254405420011608,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+14,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.49488312500034226,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+15,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.34702733300218824,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+16,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3603723749984056,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+17,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.33131391699862434,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+18,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.45142950000445126,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+19,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.363684458003263,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+20,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.3948941249982454,BM,2022_Jan_25_1622_84321.csv,neutral,correct
+21,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.46332566699857125,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+22,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.5307151670058374,BM,2022_Jan_25_1622_84321.csv,neutral,correct
+23,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.28820429199549835,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+24,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.47641858299903106,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+25,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.54553508299432,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+26,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3955225000026985,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+27,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3270943749957951,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+28,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.29071599999588216,YM,2022_Jan_25_1622_84321.csv,neutral,correct
+29,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3502407920022961,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+30,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.40014137500111246,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+31,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.29764350000186823,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+32,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.35101312500046333,YM,2022_Jan_25_1622_84321.csv,neutral,correct
+33,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.40801966700382764,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+34,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.36874225000065053,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+35,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.33085166600358207,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+36,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.44888691599771846,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+37,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.2988655419976567,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+38,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3504175420021056,YM,2022_Jan_25_1622_84321.csv,neutral,correct
+39,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3155914160015527,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+40,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.46542999999655876,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+41,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.4080459169999813,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+42,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3542742079953314,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+43,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.35093666600005236,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+44,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.32273924999753945,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+45,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3051856670062989,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+46,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3575627079990227,YM,2022_Jan_25_1622_84321.csv,neutral,correct
+47,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.38023550000070827,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+48,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.5051182910028729,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+49,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.56136887500179,BM,2022_Jan_25_1622_84321.csv,neutral,correct
+50,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.461824499994691,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+51,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.47023754100519,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+52,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3165268750017276,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+53,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3238978750014212,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+54,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.4050937080028234,BM,2022_Jan_25_1622_84321.csv,neutral,correct
+55,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.6490902500008815,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+56,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.37301462500181515,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+57,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.4821365000025253,BM,2022_Jan_25_1622_84321.csv,neutral,correct
+58,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.42205995800031815,BL,2022_Jan_25_1622_84321.csv,incongruent,correct
+59,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.45646304199908627,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+60,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.36394566600210965,YM,2022_Jan_25_1622_84321.csv,neutral,correct
+61,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3322254169979715,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+62,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.31012658300460316,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+63,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.3461165419939789,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+64,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.5214181669944082,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+65,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3202540409984067,YM,2022_Jan_25_1622_84321.csv,neutral,correct
+66,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.3240411669976311,YR,2022_Jan_25_1622_84321.csv,incongruent,correct
+67,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.4298899170025834,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+68,2022_Jan_25_1622,84321,42109,1.5,Right,Yes,No,23,Female,Danish,Friends,4,w,0.29431599999952596,YL,2022_Jan_25_1622_84321.csv,congruent,correct
+69,2022_Jan_25_1622,84321,86045,1.5,Right,Yes,No,21,Female,Hungarian,Friends,4,p,0.4133305420036777,BR,2022_Jan_25_1622_84321.csv,congruent,correct
+0,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.3542402000166476,BM,2022_Jan_25_1632_14516.csv,neutral,correct
+1,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.3225991998333484,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+2,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.26007790002040565,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+3,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.4438131998758763,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+4,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.3624827000312507,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+5,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.5343842001166195,YM,2022_Jan_25_1632_14516.csv,neutral,correct
+6,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.27985740010626614,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+7,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.5847181000281125,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+8,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.5299080999102443,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+9,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.43084929999895394,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+10,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.688229399966076,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+11,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.2747456000652164,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+12,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.2917675001081079,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+13,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.3672577999532223,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+14,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.3109569000080228,BM,2022_Jan_25_1632_14516.csv,neutral,correct
+15,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.6095465000253171,YM,2022_Jan_25_1632_14516.csv,neutral,correct
+16,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.3967301999218762,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+17,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.6403123000636697,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+18,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.39364370005205274,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+19,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.3799465000629425,BM,2022_Jan_25_1632_14516.csv,neutral,correct
+20,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.265231299912557,YM,2022_Jan_25_1632_14516.csv,neutral,correct
+21,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.4976123000960797,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+22,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.30676389997825027,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+23,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.301246200222522,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+24,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.594719700049609,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+25,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.465347999939695,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+26,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.3623723001219332,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+27,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.30031120008789003,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+28,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.5047281999140978,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+29,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.3476319999899715,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+30,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.5812978998292238,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+31,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.5146180998999625,YM,2022_Jan_25_1632_14516.csv,neutral,correct
+32,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.2978712001349777,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+34,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.4701882000081241,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+35,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.266792600043118,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+36,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.3913584998808801,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+37,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.30227599991485476,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+38,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.4410939998924732,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+39,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.2966857999563217,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+40,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.3187802000902593,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+41,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.3355020999442786,BM,2022_Jan_25_1632_14516.csv,neutral,correct
+42,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.2862574001774192,BM,2022_Jan_25_1632_14516.csv,neutral,correct
+43,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.35519129992462695,BM,2022_Jan_25_1632_14516.csv,neutral,correct
+44,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.42301240004599094,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+45,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.5107457002159208,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+46,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.586585600161925,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+48,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.2998911999166012,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+49,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.33863679994829,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+50,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.5717127001844347,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+51,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.5781139000318944,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+52,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.27486809995025396,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+53,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.3794375997968018,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+54,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.45320029999129474,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+55,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.520043299999088,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+56,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.417945499997586,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+57,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.6777801001444459,YR,2022_Jan_25_1632_14516.csv,incongruent,correct
+58,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.4533955999650061,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+59,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.3522240000311285,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+60,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.3132214001379907,BM,2022_Jan_25_1632_14516.csv,neutral,correct
+61,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.49504379997961223,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+62,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.32847309997305274,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+63,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.29556450014933944,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+64,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.413874699966982,YL,2022_Jan_25_1632_14516.csv,congruent,correct
+65,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.4596402000170201,YM,2022_Jan_25_1632_14516.csv,neutral,correct
+66,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.36740730004385114,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+67,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.3424110999330878,BL,2022_Jan_25_1632_14516.csv,incongruent,correct
+68,2022_Jan_25_1632,14516,53259,2,Right,Yes,No,24,Male,Jeg er fra damark,Friends,3,p,0.30757659999653697,BR,2022_Jan_25_1632_14516.csv,congruent,correct
+69,2022_Jan_25_1632,14516,33282,2,Right,Yes,No,25,Male,Danish,Friends,3,w,0.40584659995511174,YM,2022_Jan_25_1632_14516.csv,neutral,correct
+0,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.511322500067763,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+1,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5377641000086442,BM,2022_Jan_26_1436_55243.csv,neutral,correct
+2,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5133799999020994,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+3,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.47918489994481206,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+4,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.3896476000081748,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+5,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.36024589999578893,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+6,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5270737000973895,BM,2022_Jan_26_1436_55243.csv,neutral,correct
+7,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.5213816000614315,YM,2022_Jan_26_1436_55243.csv,neutral,correct
+8,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.39519780001137406,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+9,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.4383761000353843,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+10,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.3321850000647828,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+11,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.40580349997617304,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+12,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.3544806999852881,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+13,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.39992230001371354,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+14,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.6002688000444323,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+15,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.34559259994421154,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+16,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.3991790000582114,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+17,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.6428203999530524,BM,2022_Jan_26_1436_55243.csv,neutral,correct
+18,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.6473770999582484,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+19,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.3681069000158459,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+20,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5896982999984175,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+21,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5740794000448659,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+22,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5885317999636754,BM,2022_Jan_26_1436_55243.csv,neutral,correct
+23,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5127469999715686,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+24,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.6954632999841124,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+25,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.40636659995652735,YM,2022_Jan_26_1436_55243.csv,neutral,correct
+26,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.41967850003857166,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+27,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.4205294999992475,YM,2022_Jan_26_1436_55243.csv,neutral,correct
+28,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.40616940008476377,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+29,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5367740000365302,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+30,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.44120480003766716,YM,2022_Jan_26_1436_55243.csv,neutral,correct
+31,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5814842999679968,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+32,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.4067134000360966,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+33,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.5196892999811098,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+34,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.34588220005389303,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+35,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.3837983999401331,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+36,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.39520469994749874,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+37,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.4689758999738842,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+38,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.3824316000100225,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+39,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5593686000211164,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+40,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.3927762000821531,YM,2022_Jan_26_1436_55243.csv,neutral,correct
+41,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.4246817999519408,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+43,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.4009217000566423,YM,2022_Jan_26_1436_55243.csv,neutral,correct
+44,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.3642204999923706,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+45,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5036689001135528,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+46,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5212437000591308,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+47,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.4145788000896573,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+48,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5276140000205487,BM,2022_Jan_26_1436_55243.csv,neutral,correct
+49,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.35347889992408454,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+50,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5913719000527635,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+51,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5501772999996319,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+52,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.6409457999980077,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+53,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.6078017000108957,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+54,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.39471090002916753,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+55,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.3531752999406308,YL,2022_Jan_26_1436_55243.csv,congruent,correct
+56,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.3400998000288382,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+57,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5440452999901026,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+58,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.36259949998930097,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+59,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.544475199887529,BL,2022_Jan_26_1436_55243.csv,incongruent,correct
+60,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5524044999619946,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+61,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.4110231000231579,BM,2022_Jan_26_1436_55243.csv,neutral,correct
+62,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.4913249999517575,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+63,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5034453999251127,BM,2022_Jan_26_1436_55243.csv,neutral,correct
+64,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.45319649996235967,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+65,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.5291344000725076,YM,2022_Jan_26_1436_55243.csv,neutral,correct
+66,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.4046705000801012,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+67,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.4818063999991864,BR,2022_Jan_26_1436_55243.csv,congruent,correct
+68,2022_Jan_26_1436,55243,86063,26 years,Right,Yes,No,56,Male,dk,Family,3,w,0.37506189988926053,YR,2022_Jan_26_1436_55243.csv,incongruent,correct
+69,2022_Jan_26_1436,55243,31698,26 years,Right,Yes,No,58,Female,Danish,Romantic,6,p,0.5177183999912813,BR,2022_Jan_26_1436_55243.csv,congruent,correct

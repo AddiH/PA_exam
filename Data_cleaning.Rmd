@@ -23,6 +23,14 @@ glimpse(d)
 ```
 
 
+### Fix input mistake
+```{r}
+d <- d %>% 
+  mutate(
+    age = ifelse(age == "Tysk", "80", age))
+```
+
+
 ### Check that no ID's are aciddentially identical
 ```{r}
 # Check that these two dfs have the same number of rows
@@ -106,19 +114,3 @@ d <- d %>%
 ```{r}
 write_csv(d, "clean_data.csv")
 ```
-
-
-<!-- ### Add ID for each participant -->
-<!-- ```{r} -->
-<!-- d$subject <- d %>% -->
-<!--   group_indices(pressor_of_key, ID) -->
-<!-- ``` -->
-
-<!-- ```{r} -->
-<!-- # Check that it works -->
-<!-- d %>% -->
-<!--   group_by(subject) %>% -->
-<!--   summarise(mean(rt)) -->
-<!-- ``` -->
-
-
