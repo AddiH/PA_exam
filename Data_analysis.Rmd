@@ -277,11 +277,22 @@ d %>% levene_test(log_rt ~ IOS * congruency)
 # Standard anova
 ```{r}
 # Normal anova
-res.aov <- aov(log_rt ~ IOS * congruency, d)
-summary(res.aov)
+stand_aov <- aov(log_rt ~ IOS * congruency, d)
+summary(stand_aov)
 ```
 
->This one points to significant differences, but we don't meet the assumptions, so we can't use this.
+>This one points to significant differences, but we don't meet the assumptions, so we can't use this. (let pretend we can tho, do the turkey test and see where we see a difference)
+
+```{r}
+turkey_test <- TukeyHSD(stand_aov)
+turkey_test
+```
+
+```{r}
+plot(turkey_test)
+```
+
+
 
 # Alternatives to normal anova 
 ```{r}
@@ -323,6 +334,7 @@ shapiro_test(residuals(model))
 kruskal.test(rt ~ congruency, d)
 ```
 > yay! at least we see the simon effect.
+WAIT THIS SHOULD JUST BE A TETESTSTETTS
 
 
 
