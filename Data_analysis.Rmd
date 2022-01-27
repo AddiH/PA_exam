@@ -176,15 +176,18 @@ df2 <- data_summary(d, varname = "rt", groupnames = c("congruency", "IOS"))
 ```
 
 # Se her!!
-> Vi laver en standard joint simon task. To personer sidder ved en computer, én skal reagere når den cirkel der dukker op på skærmen er blå, den anden når cirklen er gul. Ved incongruent trials har cirklen været i modsatte side af hvor forsøgspersonen der skal trykke sidder (Personen sidder f.eks. til højre, og cirklen dukker op i venstre side af skærmen). Congruent trials har cirklen og personen i samme side.
+> Vi laver en standard joint simon task. To personer sidder ved en computer, én skal reagere når den cirkel der dukker op på skærmen er blå, den anden når cirklen er gul. Ved incongruent trials har cirklen været i modsatte side af, hvor forsøgspersonen der skal trykke sidder (Personen sidder f.eks. til højre, og cirklen dukker op i venstre side af skærmen). Congruent trials har cirklen og personen i samme side.
 Vi har desuden samlet data om hvor tætte forsøgsdeltagerne føler de er på hinanden. 1 værende ikke særlig tætte, og 7 værende meget tætte.
-I alt er der 3 interresante variabler:
+I alt er der 2 independdent variabler:
 
- rt = reaktionstid i sekunder, kontunierlig skala
- 
  congruency = cirklens position, factor
  
  IOS = Personernes "tæthed", ordinal factor
+ 
+> og én dependent:
+
+  rt = reaktionstid i sekunder, kontunierlig skala
+ 
 
 ```{r, echo=FALSE}
 ggplot(df2,(aes( x = IOS, y = rt, fill = congruency))) + 
@@ -236,7 +239,7 @@ ggqqplot(residuals(model))
 shapiro_test(residuals(model))
 ```
 
-> Allright! That is at least better, we'll take the log tranformation
+> Allright! we'll take the log tranformation
 
 ### Normality within groups
 ```{r}
@@ -246,7 +249,16 @@ d %>%
   shapiro_test(log_rt)
 ```
 
-> Oh no :( It is bad again.. We'll leave that for now, hopefully more participants will solve that problem hehe)
+```{r}
+ggqqplot(d, "log_rt", facet.by = "IOS")
+d %>%
+  group_by(IOS) %>%
+  shapiro_test(log_rt)
+```
+
+
+> Not everything is normal here, so we might as well go with an anova for non-parametric data. IDK what kind of test to do for two independent non-parametric data tho, so lets proceed as if the data was all normal.
+
 
 ## Homogneity of variance assumption
 ```{r}
@@ -260,7 +272,7 @@ plot(model, 1)
 d %>% levene_test(log_rt ~ IOS * congruency)
 ```
 
-> it's baaaaad oh noes.
+> it's baaaaad oh noes. We do not meet the homogneity of variance assumption
 
 # Standard anova
 ```{r}
@@ -269,31 +281,16 @@ res.aov <- aov(log_rt ~ IOS * congruency, d)
 summary(res.aov)
 ```
 
->This one points to significant differences, but we don't meet the assumptions
+>This one points to significant differences, but we don't meet the assumptions, so we can't use this.
 
 # Alternatives to normal anova 
 ```{r}
-# Kruskal-Wallis anova (for non-normal data) - does not work, can only take one independent variable
-kruskal.test(log_rt ~ IOS * congruency, d)
-# The data that is not transformed has the same output, so lets just use that
-kruskal.test(rt ~ IOS * congruency, d)
-```
+# Kruskal-Wallis anova (for non-normal data) - does not work, can only take one independent variable :'(
 
-```{r}
-# Kruskal-Wallis anova (for non-normal data) - does not work, can only take one independent variable
-kruskal.test(log_rt ~ congruency, d)
-# The data that is not transformed has the same output, so lets just use that
-kruskal.test(rt ~ congruency, d)
+# kruskal.test(log_rt ~ IOS * congruency, d)
 ```
+> what dooo??? (Should we just do the normal anova? Cause that is what we would do if we had enough data probably. It is hella sus that it is significant, it doesnt look like that when looking at the barplots with errorbars)
 
-```{r}
-# Kruskal-Wallis anova (for non-normal data) - does not work, can only take one independent variable
-kruskal.test(log_rt ~ IOS, d)
-# The data that is not transformed has the same output, so lets just use that
-kruskal.test(rt ~ IOS, d)
-```
-
-> So this test is probably the one to go with, as it does not require the assumption of equal variances. (Homogneity of variance assumption) Or the normality assumption
 
 # Do we even have a simon effect?
 ## Assumptions
@@ -317,18 +314,15 @@ ggqqplot(residuals(model))
 shapiro_test(residuals(model))
 ```
 
-> Data is closer to (but isn't) normal with log transformation
+> Data is closer to (but isn't) normal with log transformation, so lets use the Kruskal-Wallis anova. (that also doesn't have the assumption of homogneity of variance)
 
-### Homogneity of variance assumption 
-```{r}
-plot(model,1)
-d %>% levene_test(log_rt ~ congruency)
-```
-
-> Homogneity of variance assumption is aokay.
 
 ## Anova
 ```{r}
 #Kruskal-Wallis anova, that is okay with non-normal data:
-kruskal.test(log_rt ~ congruency, d)
+kruskal.test(rt ~ congruency, d)
 ```
+> yay! at least we see the simon effect.
+
+
+
