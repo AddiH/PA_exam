@@ -8,6 +8,7 @@ output:
     toc_depth: 3
     toc_float: true
 ---
+
 # Setup
 
 ```{r setup, include=FALSE}
@@ -16,7 +17,7 @@ pacman::p_load(tidyverse, readbulk, wesanderson, lmerTest, rstatix, ggpubr, plyr
 ```
 
 
-# Helper function
+## Helper function
 ```{r, echo=FALSE}
 #+++++++++++++++++++++++++
 # Function to calculate the mean and the standard deviation
@@ -45,7 +46,7 @@ df1 <- data_summary(d, varname = "rt", groupnames = "congruency")
 ```
 
 
-# Load data
+## Load data
 ```{r, echo=FALSE}
 # load data
 with_error_neutral <- read_csv("clean_data.csv",
@@ -93,6 +94,7 @@ d <- with_error_neutral %>%
 ```{r}
 glimpse(d)
 ```
+
 
 
 # Plots
