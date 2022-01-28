@@ -1,0 +1,219 @@
+---
+title: "Data_analyse"
+author: "Astrid Elmann"
+date: "1/20/2022"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+# Setup
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pacman::p_load(tidyverse, readbulk, wesanderson, lmerTest, rstatix, ggpubr, plyr, dplyr)
+```
+
+
+# Helper function
+```{r, echo=FALSE}
+#+++++++++++++++++++++++++
+# Function to calculate the mean and the standard deviation
+  # for each group
+#+++++++++++++++++++++++++
+# data : a data frame
+# varname : the name of a column containing the variable
+  #to be summariezed
+# groupnames : vector of column names to be used as
+  # grouping variables
+data_summary <- function(data, varname, groupnames){
+  require(plyr)
+  summary_func <- function(x, col){
+    c(mean = mean(x[[col]], na.rm=TRUE),
+      sd = sd(x[[col]], na.rm=TRUE))
+  }
+  data_sum<-ddply(data, groupnames, .fun=summary_func,
+                  varname)
+  data_sum <- rename(data_sum, c("mean" = varname))
+ return(data_sum)
+}
+```
+
+```{r, echo=FALSE}
+df1 <- data_summary(d, varname = "rt", groupnames = "congruency")
+```
+
+
+# Load data
+```{r, echo=FALSE}
+# load data
+with_error_neutral <- read_csv("clean_data.csv",
+              col_names = TRUE,
+              col_types = cols(
+                timestamp = col_character() , 
+                experiment_ID = col_factor(), 
+                subject = col_factor(),
+                r_len = col_number(),
+                handedness = col_factor(),
+                vision = col_factor(),
+                colorvision = col_factor(),
+                age = col_integer(),
+                gender = col_factor(),
+                nationality = col_factor(),
+                r_type = col_factor(),
+                IOS = col_factor(), 
+                key_press = col_factor(),
+                rt = col_number(),
+                trial_stim = col_factor(),
+                congruency = col_factor(),
+                accuracy = col_factor()
+              ))
+```
+
+```{r, include=FALSE}
+glimpse(with_error_neutral)
+```
+
+```{r, include=FALSE}
+# Make IOS ordered variable (noone chose 2 or 7)
+with_error_neutral$IOS <- ordered(with_error_neutral$IOS, levels = c(1, 3, 4, 5, 6))
+
+class(with_error_neutral$IOS)
+levels(with_error_neutral$IOS)
+```
+
+```{r, echo=FALSE}
+# remove error and neutral trials
+d <- with_error_neutral %>% 
+  filter(accuracy == "correct") %>% 
+  filter(congruency != "neutral")
+```
+
+```{r}
+glimpse(d)
+```
+
+
+# Plots
+
+```{r}
+pal <- wes_palettes$FantasticFox1
+```
+
+## RT by IOS
+
+```{r, echo=FALSE}
+one <- ggplot(d,(aes( x = IOS, y = rt, fill = congruency))) + 
+  geom_boxplot(position=position_dodge(.75)) +
+  scale_fill_manual(values = pal) +
+    labs(title = 'Reaction time by IOS') 
+
+one
+ggsave("plots/Boxplot_reaction_time_IOS.png", plot = one)
+```
+
+## RT by congruency
+
+```{r}
+two <- d %>% 
+ggplot(aes(x = congruency, y = rt, fill = congruency)) +
+  geom_boxplot(outlier.colour=pal[5]) +
+  scale_fill_manual(values = pal) +
+  labs(title = 'Reaction time per congruency') +
+  theme(legend.position = 'None') +
+  ylab("Reaction time (ms)") +
+  theme(axis.title.x = element_blank()) +
+  theme(plot.background=element_rect(fill="white"),
+        plot.margin = unit(c(1, 4, 1, 4), "cm"))
+two
+ggsave("plots/Boxplot_reaction_time_congruency.png", plot = two)
+
+```
+
+## RT by r_type
+```{r, echo=FALSE}
+three <- ggplot(d,(aes( x = r_type, y = rt, fill = congruency))) + 
+  geom_boxplot(position=position_dodge(.75)) +
+  scale_fill_manual(values = pal) +
+    ylab("Reaction time (ms)") +
+  theme(axis.title.x = element_blank()) +
+    labs(title = 'Reaction time per relationship type') 
+
+three
+ggsave("plots/Boxplot_reaction_time_r_type.png", plot = three)
+```
+
+## Accuracy by congruency
+```{r, echo=FALSE}
+with_error_neutral %>% 
+  ggplot() +
+  aes(accuracy, fill = congruency) + 
+  geom_bar() + 
+  facet_grid(~ congruency) +
+  scale_fill_manual(values = pal) +
+  labs(title = 'Accuracy for each congruency') + 
+  theme(legend.position = 'NULL')
+```
+
+
+# Trash
+
+
+<!-- ```{r, echo=FALSE} -->
+<!-- with_error_neutral %>% -->
+<!--   filter( -->
+<!--     accuracy == 'correct' -->
+<!--     ) %>% -->
+<!-- ggplot() + -->
+<!--   aes(x = congruency, y = rt, color = congruency) + -->
+<!--   # creating the geom points of the mean rt of  each congruency -->
+<!--   stat_summary(fun = "mean", geom = "point", size = 3, color = pal[1:3]) + -->
+<!--   # adding the error bars -->
+<!--   stat_summary(fun.data = "mean_se", geom = "errorbar", width = .1, color = pal[1:3]) + -->
+<!--   # adding the connecting line between the points -->
+<!--   stat_summary(fun = 'mean', geom = 'line', color = pal[5], aes(group = 1)) + -->
+<!--   theme(legend.position = 'None') + -->
+<!--   labs(title = 'Mean RT of the Simon Task with SE errorbars') -->
+<!-- ``` -->
+
+<!-- ```{r, echo=FALSE} -->
+<!-- ggplot(df1,(aes( x = congruency, y = rt, fill = congruency))) +  -->
+<!--   geom_bar(stat = "identity", position=position_dodge()) + -->
+<!--   geom_errorbar(aes(ymin=rt-sd, ymax=rt+sd), width=.2, -->
+<!--                  position=position_dodge(.9)) + -->
+<!--   scale_fill_manual(values = pal) + -->
+<!--     ylab("Reaction time (ms)") + -->
+<!--     theme(legend.position = 'None') + -->
+<!--   theme(axis.title.x = element_blank()) + -->
+<!--   theme(plot.background=element_rect(fill="white"), -->
+<!--         plot.margin = unit(c(1, 5, 1, 4), "cm")) -->
+<!-- ``` -->
+
+<!-- ```{r, echo=FALSE} -->
+
+<!-- mu <- ddply(d, "congruency", summarise, grp.mean = mean(rt)) -->
+
+<!-- ggplot(d,(aes(x = rt, fill = congruency))) +  -->
+<!--   geom_density(alpha=.4) + -->
+<!--   geom_vline(data = mu, aes(xintercept=grp.mean, color=congruency), -->
+<!--              linetype="solid") + -->
+<!--   scale_fill_manual(values = pal[3:4]) + -->
+<!--   scale_color_manual(values = pal[3:4]) + -->
+<!--   labs(title = 'Density plot with mean line') -->
+<!-- ``` -->
+
+<!-- ```{r, echo=FALSE} -->
+<!-- d %>% -->
+<!-- ggplot() + -->
+<!--   aes(x = IOS, y = rt, color = IOS) + -->
+<!--   # creating the geom points of the mean rt of  each congruency -->
+<!--   stat_summary(fun = "mean", geom = "point", size = 3, color = pal[1:3]) + -->
+<!--   # adding the error bars -->
+<!--   stat_summary(fun.data = "mean_se", geom = "errorbar", width = .1, color = pal[1:3]) + -->
+<!--   # adding the connecting line between the points -->
+<!--   stat_summary(fun = 'mean', geom = 'line', color = pal[5], aes(group = 1)) + -->
+<!--   theme(legend.position = 'None') + -->
+<!--   labs(title = 'Mean RT by IOS') -->
+<!-- ``` -->
+
