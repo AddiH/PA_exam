@@ -1,8 +1,12 @@
 ---
 title: "Data_cleaning"
 author: "Astrid Elmann"
-date: "1/19/2022"
-output: html_document
+date: "1/20/2022"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -48,6 +52,16 @@ subjects <- d %>%
   count(subject)
 ```
 
+### Check the r_len variable
+```{r}
+unique(d$r_len)
+```
+
+### Check the nationality variables
+```{r}
+unique(d$nationality)
+```
+
 ### Remove slow trials
 ```{r}
 d <- d %>% 
@@ -63,16 +77,6 @@ d <- d %>%
     filter(handedness == "Right")
 ```
 
-### Check the r_len variable
-```{r}
-unique(d$r_len)
-```
-
-### Check the nationality variables
-```{r}
-unique(d$nationality)
-```
-
 ### Add congruency column
 ```{r}
 d <- d %>% 
@@ -81,6 +85,12 @@ d <- d %>%
     congruency = ifelse(trial_stim == 'BM' | trial_stim == "YM", 'neutral', congruency),
     congruency = as.factor(congruency),
   )
+```
+
+### Remove neutral trials
+```{r}
+d <- d %>% 
+  filter(congruency != "neutral")
 ```
 
 ### Add accuracy column
@@ -97,22 +107,63 @@ d <- d %>%
 # Getting no. of error trials
 table(d$accuracy)["error"]
 ```
-
-### Remove rt +- 3 SD
+### Remove errors
 ```{r}
-# Define upper and lower boundaries
+d <- d %>% 
+  filter(accuracy != "error")
+```
+
+
+### Remove outliers
+```{r}
+# MAD method
+lower_bound <- median(d$rt) - 3 * mad(d$rt, constant = 1)
+lower_bound
+
+upper_bound <- median(d$rt) + 3 * mad(d$rt, constant = 1)
+upper_bound
+
+# Just for fun
+# Old, outdated +-3SD outlier method
 upper <- mean(d$rt) + 3 * (sd(d$rt))
 lower <- mean(d$rt) - 3 * (sd(d$rt))
 
-d <- d %>% 
-  filter(rt <= upper) %>% 
-  filter(rt >= -lower)
-
 ```
+
+```{r}
+# Just for fun
+# Visualizing which trials will be cut with each method
+ggplot(d, aes(x = rt)) +
+  geom_histogram(binwidth=.01) +
+  geom_vline(xintercept = lower_bound) +
+  geom_vline(xintercept = upper_bound) +
+  geom_vline(xintercept = lower, colour="green") +
+  geom_vline(xintercept = upper, colour="green")
+```
+
+```{r}
+# See the outliers
+outliers <- d %>% 
+  filter(rt >= upper_bound | rt <= lower_bound) 
+
+# Count outliers for each participant
+outliers %>% 
+  group_by(subject) %>% 
+  summarise(N = n())
+
+# As two participants have more than 30% of trials becoming outliers, they will be removed.
+d <- d %>% 
+  filter(subject != 31698 & subject != 33282)
+
+# Remove the outliers
+d <- d %>% 
+   filter(rt <= upper_bound) %>% 
+   filter(rt >= lower_bound)
+```
+
 
 ### Save the df
 ```{r}
 write_csv(d, "clean_data.csv")
 ```
-
 

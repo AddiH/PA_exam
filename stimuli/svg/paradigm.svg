@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="200mm"
+   viewBox="0 0 210 200"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="/Users/astrid/OneDrive - Aarhus Universitet/3rd_semester/Perception_action/Exam/Farligfarlilgprogrammering/PA_exam/Paradigm.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="paradigm.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     height="200mm"
+     inkscape:zoom="0.62514887"
+     inkscape:cx="381.50913"
+     inkscape:cy="353.5158"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path15730" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path15727" />
+    </marker>
+    <rect
+       x="-105.67708"
+       y="88.06423"
+       width="998.89998"
+       height="659.22367"
+       id="rect15214" />
+  </defs>
+  <g
+     inkscape:label="Lag 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g15486"
+       transform="translate(-15.311644,-11.983026)">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:1.165;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect846"
+         width="77.457603"
+         height="44.1936"
+         x="33.264004"
+         y="57.9744" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.165;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect846-9"
+         width="77.457603"
+         height="44.1936"
+         x="59.002892"
+         y="90.970444" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.165;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect846-9-6"
+         width="77.457603"
+         height="44.1936"
+         x="81.616341"
+         y="121.12172" />
+      <rect
+         style="fill:#999999;stroke:#ababae;stroke-width:1.165;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect958"
+         width="0.23872121"
+         height="4.2969818"
+         x="70.9002"
+         y="78.539276" />
+      <rect
+         style="fill:#999999;stroke:#ababae;stroke-width:1.165;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect958-5"
+         width="0.23872121"
+         height="4.2969818"
+         x="80.431999"
+         y="-73.313164"
+         transform="rotate(90.136693)" />
+      <circle
+         style="fill:#0000ff;fill-opacity:1;stroke:#1212ea;stroke-width:1.165;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path1338"
+         cx="117.87585"
+         cy="112.67737"
+         r="2.9891341" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="125.09175"
+         y="76.079185"
+         id="text2346"><tspan
+           sodipodi:role="line"
+           id="tspan2344"
+           style="font-size:7.05556px;stroke-width:0.264583"
+           x="125.09175"
+           y="76.079185">1500 ms</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="150.32954"
+         y="106.80347"
+         id="text5890"><tspan
+           sodipodi:role="line"
+           id="tspan5888"
+           style="font-size:7.05556px;stroke-width:0.264583"
+           x="150.32954"
+           y="106.80347">max. 1500 ms</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="173.73854"
+         y="143.38"
+         id="text9572"><tspan
+           sodipodi:role="line"
+           id="tspan9570"
+           style="font-size:7.05556px;stroke-width:0.264583"
+           x="173.73854"
+           y="143.38">1000 ms</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text15212"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect15214)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.789;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#Arrow1Lend);marker-end:url(#Arrow1Lend);stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 7.2016299,100.90152 55.860015,165.73497"
+       id="path15645" />
+  </g>
+</svg>

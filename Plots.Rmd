@@ -41,9 +41,6 @@ data_summary <- function(data, varname, groupnames){
 }
 ```
 
-```{r, echo=FALSE}
-df1 <- data_summary(d, varname = "rt", groupnames = "congruency")
-```
 
 
 ## Load data
@@ -72,6 +69,8 @@ with_error_neutral <- read_csv("clean_data.csv",
               ))
 ```
 
+
+
 ```{r, include=FALSE}
 glimpse(with_error_neutral)
 ```
@@ -89,6 +88,10 @@ levels(with_error_neutral$IOS)
 d <- with_error_neutral %>% 
   filter(accuracy == "correct") %>% 
   filter(congruency != "neutral")
+```
+
+```{r, echo=FALSE}
+df1 <- data_summary(d, varname = "rt", groupnames = "congruency")
 ```
 
 ```{r}
@@ -109,6 +112,7 @@ pal <- wes_palettes$FantasticFox1
 one <- ggplot(d,(aes( x = IOS, y = rt, fill = congruency))) + 
   geom_boxplot(position=position_dodge(.75)) +
   scale_fill_manual(values = pal) +
+    ylab("Reaction time (ms)") +
     labs(title = 'Reaction time by IOS') 
 
 one
@@ -146,20 +150,22 @@ three
 ggsave("plots/Boxplot_reaction_time_r_type.png", plot = three)
 ```
 
-## Accuracy by congruency
-```{r, echo=FALSE}
-with_error_neutral %>% 
-  ggplot() +
-  aes(accuracy, fill = congruency) + 
-  geom_bar() + 
-  facet_grid(~ congruency) +
-  scale_fill_manual(values = pal) +
-  labs(title = 'Accuracy for each congruency') + 
-  theme(legend.position = 'NULL')
-```
 
 
 # Trash
+
+<!-- ## Accuracy by congruency -->
+<!-- ```{r, echo=FALSE} -->
+<!-- with_error_neutral %>%  -->
+<!--   ggplot() + -->
+<!--   aes(accuracy, fill = congruency) +  -->
+<!--   geom_bar() +  -->
+<!--   facet_grid(~ congruency) + -->
+<!--   scale_fill_manual(values = pal) + -->
+<!--   labs(title = 'Accuracy for each congruency') +  -->
+<!--   theme(legend.position = 'NULL') -->
+<!-- ``` -->
+
 
 
 <!-- ```{r, echo=FALSE} -->

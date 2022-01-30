@@ -14,32 +14,10 @@ knitr::opts_chunk$set(echo = TRUE)
 pacman::p_load(tidyverse, readbulk, wesanderson, lmerTest, rstatix, ggpubr, plyr, dplyr)
 ```
 
-```{r, echo=FALSE}
-#+++++++++++++++++++++++++
-# Function to calculate the mean and the standard deviation
-  # for each group
-#+++++++++++++++++++++++++
-# data : a data frame
-# varname : the name of a column containing the variable
-  #to be summariezed
-# groupnames : vector of column names to be used as
-  # grouping variables
-data_summary <- function(data, varname, groupnames){
-  require(plyr)
-  summary_func <- function(x, col){
-    c(mean = mean(x[[col]], na.rm=TRUE),
-      sd = sd(x[[col]], na.rm=TRUE))
-  }
-  data_sum<-ddply(data, groupnames, .fun=summary_func,
-                  varname)
-  data_sum <- rename(data_sum, c("mean" = varname))
- return(data_sum)
-}
-```
 
 ```{r, echo=FALSE}
 # load data
-with_error_neutral <- read_csv("clean_data.csv",
+df <- read_csv("clean_data.csv",
               col_names = TRUE,
               col_types = cols(
                 timestamp = col_character() , 
@@ -63,30 +41,12 @@ with_error_neutral <- read_csv("clean_data.csv",
 ```
 
 ```{r, include=FALSE}
-
-glimpse(with_error_neutral)
-```
-
-```{r, include=FALSE}
 # Make IOS ordered variable (noone chose 2 or 7)
-with_error_neutral$IOS <- ordered(with_error_neutral$IOS, levels = c(1, 3, 4, 5, 6))
-
-#with_error_neutral$IOS <- ordered(with_error_neutral$IOS, levels = c(1, 2, 3, 4, 5, 6, 7))
-
-class(with_error_neutral$IOS)
-levels(with_error_neutral$IOS)
-```
-
-
-```{r, echo=FALSE}
-# remove error and neutral trials
-d <- with_error_neutral %>% 
-  filter(accuracy == "correct") %>% 
-  filter(congruency != "neutral")
+df$IOS <- ordered(df$IOS, levels = c(1, 3, 4, 5, 6))
 ```
 
 ```{r}
-glimpse(d)
+glimpse(df)
 ```
 
 
@@ -103,10 +63,12 @@ I alt er der 2 independdent variabler:
 
   rt = reaktionstid i sekunder, kontunierlig skala
  
-
+> og så skal der self lige huskes at det er et repeated measures design som gør variablen "subject" interessant
 
 ```{r, echo=FALSE}
-ggplot(d,(aes( x = IOS, y = rt, fill = congruency))) + 
+pal <- wes_palettes$FantasticFox1
+
+ggplot(df,(aes( x = IOS, y = rt, fill = congruency))) + 
   geom_boxplot(position=position_dodge(.75)) +
   scale_fill_manual(values = pal) 
 ```
@@ -116,236 +78,150 @@ ggplot(d,(aes( x = IOS, y = rt, fill = congruency))) +
 # -
 # Assumptions for anova
 
+## Condensing to mean
+> The mixed effect anova will only take a dataframe with one rt per subject, per congruency, per IOS. Perhaps we're doing something wrong, or should've chosen another model, but to stay in line with the papers we based our experiment on, we want to do an anova.
+
+```{r}
+d <- df %>% 
+  group_by(subject, congruency, IOS) %>% 
+  summarise_at(vars(rt), list(rt = mean)) %>% 
+  ungroup()
+```
+
 ## Outliers
 
 ```{r}
 d %>% 
-  select(congruency, rt) %>% 
-  group_by(congruency) %>%
+  group_by(congruency, IOS) %>%
   identify_outliers(rt)
 ```
 
-> 5 outliers are found, but as they are not extreme (and we also already removed +-3SD) we will leave them in
+> 1 outlier is found, it is not extreme. Not an issue, we will leave it in. (outliers have been removed in Data_cleaning.Rmd with MAD method)
 
 ## Normality
 ```{r}
-# Build the linear model
-model  <- lm(rt ~ IOS * congruency, d)
-# Create a QQ plot of residuals
-ggqqplot(residuals(model))
+# d %>%
+#   group_by(congruency, IOS) %>%
+#   shapiro_test(rt)
+
+ggqqplot(d, "rt", ggtheme = theme_bw()) +
+  facet_grid(IOS ~ congruency, labeller = "label_both")
 ```
-
-> Looks okay.
-
-```{r}
-# Compute Shapiro-Wilk test of normality
-shapiro_test(residuals(model))
-```
-
-> P-value of 0.0003 means that it is statisticly different than a normal distribution :(
-
-### Transform data and try again
-```{r}
-d$log_rt <- log(d$rt)
-# Build the linear model
-model  <- lm(log_rt ~ IOS * congruency, d)
-# Create a QQ plot of residuals
-ggqqplot(residuals(model))
-# Compute Shapiro-Wilk test of normality
-shapiro_test(residuals(model))
-```
-
-> Allright! we'll take the log tranformation
-
-### Normality within groups
-```{r}
-ggqqplot(d, "log_rt", facet.by = "congruency")
-d %>%
-  group_by(congruency) %>%
-  shapiro_test(log_rt)
-```
-
-```{r}
-ggqqplot(d, "log_rt", facet.by = "IOS")
-d %>%
-  group_by(IOS) %>%
-  shapiro_test(log_rt)
-```
-
-
-> Not everything is normal here, so we might as well go with an anova for non-parametric data. IDK what kind of test to do for two independent non-parametric data tho, so lets proceed as if the data was all normal.
-
+> This test is close to meaningless - we do not have enough data to say anything about normality.
 
 ## Homogneity of variance assumption
 ```{r}
-plot(model, 1)
+d %>%
+  group_by(congruency) %>%
+  levene_test(rt ~ IOS)
 ```
+> Somehow, there is homogeneity of variances
 
-> Idk how to read this, lets look at the numbers
-
-
+## Homogeneity of covariances assumption
 ```{r}
-d %>% levene_test(log_rt ~ IOS * congruency)
+box_m(d[, "rt", drop = FALSE], d$IOS)
 ```
+> We're good again!
 
-> it's baaaaad oh noes. We do not meet the homogneity of variance assumption
+## Assumption of sphericity
+> Included in the test
 
-# Standard anova
+# Mixed anova
 ```{r}
-# Normal anova
-stand_aov <- aov(log_rt ~ IOS * congruency, d)
-summary(stand_aov)
+# Two-way mixed ANOVA test
+res.aov <- 
+  anova_test(data = d,
+  dv = rt, wid = subject,
+  between = IOS, within = congruency
+  )
+get_anova_table(res.aov)
 ```
 
->This one points to significant differences, but we don't meet the assumptions, so we can't use this. (let pretend we can tho, do the turkey test and see where we see a difference)
-
-```{r}
-turkey_test <- TukeyHSD(stand_aov)
-turkey_test
-```
-
-```{r}
-plot(turkey_test)
-```
-
-
-
-# Alternatives to normal anova 
-```{r}
-# Kruskal-Wallis anova (for non-normal data) - does not work, can only take one independent variable :'(
-
-# kruskal.test(log_rt ~ IOS * congruency, d)
-```
-> what dooo??? (Should we just do the normal anova? Cause that is what we would do if we had enough data probably. It is hella sus that it is significant, it doesnt look like that when looking at the barplots with errorbars)
-
-# -
 # Post hoc
-# -
-# Do we even have a simon effect?
+```{r}
+d %>%
+  pairwise_t_test(
+    rt ~ congruency, paired = TRUE, 
+    p.adjust.method = "bonferroni"
+  )
+```
 
-## Assumptions
-### Outlier assumption
+
+### Numbers for reporting
+
 ```{r}
 d %>% 
-  select(congruency, log_rt) %>% 
-  group_by(congruency) %>%
-  identify_outliers(log_rt)
+  group_by(congruency) %>% 
+  dplyr::summarise(mean = mean(rt), SD = sd(rt))
 ```
 
-> No outliers
-
-### Normality assumption
-```{r}
-# Build the linear model
-model  <- lm(log_rt ~ congruency, d)
-# Create a QQ plot of residuals
-ggqqplot(residuals(model))
-# Compute Shapiro-Wilk test of normality
-shapiro_test(residuals(model))
-```
-
-> Data is closer to (but isn't) normal with log transformation, so lets use the Kruskal-Wallis anova. (that also doesn't have the assumption of homogneity of variance)
-
-
-### Anova
-```{r}
-#Kruskal-Wallis anova, that is okay with non-normal data:
-kruskal.test(rt ~ congruency, d)
-```
-> yay! at least we see the simon effect.
-WAIT THIS SHOULD JUST BE A TETESTSTETTS
-
+# -
 # Difference in relatioinships type
+# -
+> Literal copy paste of the above, nothing interesting here
+
 ```{r, echo=FALSE}
-ggplot(d,(aes( x = r_type, y = rt, fill = congruency))) + 
+ggplot(df,(aes( x = r_type, y = rt, fill = congruency))) + 
   geom_boxplot(position=position_dodge(.75)) +
   scale_fill_manual(values = pal) 
 ```
 
+## Condensing to mean
 
-## Assumptions
-### Outlier assumption
+```{r}
+d <- df %>% 
+  group_by(subject, congruency, r_type) %>% 
+  summarise_at(vars(rt), list(rt = mean)) %>% 
+  ungroup()
+```
+
+## Outliers
 
 ```{r}
 d %>% 
-  select(r_type, rt) %>% 
-  group_by(r_type) %>%
+  group_by(congruency, r_type) %>%
   identify_outliers(rt)
 ```
 
-### Normality
+> 1 outlier is found, it is not extreme. Not an issue, we will leave it in. (outliers have been removed in Data_cleaning.Rmd with MAD method)
 
+## Normality
 ```{r}
-# Build the linear model
-model  <- lm(rt ~ r_type * congruency, d)
-# Create a QQ plot of residuals
-ggqqplot(residuals(model))
-```
+d %>%
+  group_by(congruency, r_type) %>%
+  shapiro_test(rt)
 
+ggqqplot(d, "rt", ggtheme = theme_bw()) +
+  facet_grid(r_type ~ congruency, labeller = "label_both")
+```
+> This test is close to meaningless - we do not have enough data to say anything about normality.
+
+## Homogneity of variance assumption
 ```{r}
-# Compute Shapiro-Wilk test of normality
-shapiro_test(residuals(model))
+d %>%
+  group_by(congruency) %>%
+  levene_test(rt ~ r_type)
 ```
+> Somehow, there is homogeneity of variances
 
-### Homogneity of variance assumption
-
+## Homogeneity of covariances assumption
 ```{r}
-plot(model, 1)
+box_m(d[, "rt", drop = FALSE], d$r_type)
 ```
+> We're good again!
 
+## Assumption of sphericity
+> Included in the test
+
+# Mixed anova
 ```{r}
-d %>% levene_test(log_rt ~ r_type * congruency)
+# Two-way mixed ANOVA test
+res.aov <- 
+  anova_test(data = d,
+  dv = rt, wid = subject,
+  between = r_type, within = congruency
+  )
+get_anova_table(res.aov)
 ```
-
-```{r}
-# Normal anova
-stand_aov <- aov(log_rt ~ r_type * congruency, d)
-summary(stand_aov)
-```
-
-```{r}
-turkey_test <- TukeyHSD(stand_aov)
-turkey_test
-```
-
-
-
-
-
-# Demographics
-```{r}
-agedf <- d %>% 
-  group_by(subject) %>% 
-  summarise(mean = mean(age))
-
-mean(d$age)
-
-agev <- c(80, 81, 20, 22, 27, 31, 23, 21, 24, 25, 58, 56)
-
-mean(agev)
-sd(agev)
-
-unique(d$IOS)
-```
-
-
-```{r}
-d$IOS <- as.numeric(d$IOS)
-class(d$IOS)
-
-d_group <- d %>% 
-    group_by(IOS, congruency) 
-
-d_group %>% 
-  dplyr::summarize(rt_mean = mean(rt))
-```
-
-
-```{r}
-mtcars %>%
-  group_by(cyl) %>%
-  dplyr::summarise(mean = mean(disp), n = n())
-```
-
 
 
