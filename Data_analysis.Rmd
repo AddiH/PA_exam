@@ -50,21 +50,6 @@ glimpse(df)
 ```
 
 
-# Se her!!
-> Vi laver en standard joint simon task. To personer sidder ved en computer, én skal reagere når den cirkel der dukker op på skærmen er blå, den anden når cirklen er gul. Ved incongruent trials har cirklen været i modsatte side af, hvor forsøgspersonen der skal trykke sidder (Personen sidder f.eks. til højre, og cirklen dukker op i venstre side af skærmen). Congruent trials har cirklen og personen i samme side.
-Vi har desuden samlet data om hvor tætte forsøgsdeltagerne føler de er på hinanden. 1 værende ikke særlig tætte, og 7 værende meget tætte.
-I alt er der 2 independdent variabler:
-
- congruency = cirklens position, factor
- 
- IOS = Personernes "tæthed", ordinal factor
- 
-> og én dependent:
-
-  rt = reaktionstid i sekunder, kontunierlig skala
- 
-> og så skal der self lige huskes at det er et repeated measures design som gør variablen "subject" interessant
-
 ```{r, echo=FALSE}
 pal <- wes_palettes$FantasticFox1
 
@@ -79,7 +64,7 @@ ggplot(df,(aes( x = IOS, y = rt, fill = congruency))) +
 # Assumptions for anova
 
 ## Condensing to mean
-> The mixed effect anova will only take a dataframe with one rt per subject, per congruency, per IOS. Perhaps we're doing something wrong, or should've chosen another model, but to stay in line with the papers we based our experiment on, we want to do an anova.
+> The mixed effect anova will needs a dataframe with one rt per subject, per congruency, per IOS.
 
 ```{r}
 d <- df %>% 
@@ -158,7 +143,7 @@ d %>%
 # -
 # Difference in relatioinships type
 # -
-> Literal copy paste of the above, nothing interesting here
+> Literal copy paste of the above, just on other data
 
 ```{r, echo=FALSE}
 ggplot(df,(aes( x = r_type, y = rt, fill = congruency))) + 
